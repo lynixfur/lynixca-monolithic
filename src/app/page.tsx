@@ -14,14 +14,14 @@ export default function Home() {
           <div className="block md:flex items-center mb-5 space-x-0 md:space-x-3">
             <img src="lynix2.png" className="w-20 mb-1.5" alt="lynix" />
             <h1 className="text-6xl font-semibold text-neutral-100">
-              Hi, I'm Lynix!
+              Hi, I&apos;m Lynix!
             </h1>
           </div>
           <h2 className="text-3xl text-neutral-300">
             Cybersecurity Student
           </h2>
           <p className="pt-4 text-lg grow text-neutral-400">
-            I'm a Canadian old VR enthusiast, Developer, Cybersecurity Student, and Furry, I'm seeking opportunities to
+            I&apos;m a Canadian old VR enthusiast, Developer, Cybersecurity Student, and Furry, I&apos;m seeking opportunities to
             change the world for better for everyone with IT.
             <br /><br />
             <span className="text-sm text-cyan-600 hidden">%INFA_STATUS%</span>
