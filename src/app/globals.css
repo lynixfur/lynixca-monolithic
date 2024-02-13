@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 body {
   @apply bg-neutral-950 text-neutral-100;
+}
+ 
+.fancy {
+  background: linear-gradient(90deg, #0e82ff 0%, #63e0ff 100%); /* Original gradient */
+  background-clip: text;
+  -webkit-background-clip: text; 
+  color: transparent; /* Makes the text itself invisible */
+  @apply font-extrabold;
+
+  /* Animation for wavy effect */
+  animation: wavy-gradient 5s ease-in-out infinite alternate;
+}
+
+/* Keyframe animation */
+@keyframes wavy-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.permanent-marker-regular {
+  font-family: "Permanent Marker";
 }

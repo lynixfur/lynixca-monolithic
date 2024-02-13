@@ -19,11 +19,15 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="/fontawesome/css/all.min.css"></link>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"></link>
       </head>
       <body className={inter.className}>
-        <div className="flex-col justify-center">
-              {children}
-        </div>
+          <Navbar />
+          <main className="p-7 md:p-24">
+          {children}
+          </main>
       </body>
     </html>
   );
