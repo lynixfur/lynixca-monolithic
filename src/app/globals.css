@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 body {
-  @apply bg-neutral-950 text-neutral-100;
+  @apply bg-neutral-900 text-neutral-100;
 }
  
 .fancy {

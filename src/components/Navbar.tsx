@@ -10,11 +10,11 @@ export default function Navbar() {
   };
 
   return (
-    <header className="py-5 px-7 md:px-24 bg-neutral-900 border-b border-neutral-700">
+    <header className="py-5 px-7 md:px-24 bg-neutral-800 border-b border-neutral-700">
       <nav className="flex items-center justify-between">
         <a href="/" className="font-semibold text-lg flex items-center mr-10">
-          <img src="/lynix.png" alt="lynix" className="h-10 w-10 mb-1.5 hidden" />
-          <span className="text-cyan-700 text-4xl permanent-marker-regular">Lynix.ca</span>
+          <img src="/lynix.png" alt="lynix" className="h-[50px] w-[50px] mr-3 -mt-1.5" />
+          <h3 className='text-4xl font-extrabold'>LYNIX</h3>
         </a>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -24,13 +24,13 @@ export default function Navbar() {
           </button>
         </div>
         <div className="hidden md:flex items-center space-x-8">
-          <a href="/projects" className="font-bold text-lg hover:text-cyan-600 transition-colors text-neutral-400">Projects</a>
-          <a href="/blog" className="font-bold text-lg hover:text-cyan-600 transition-colors text-neutral-400">Blog</a>
-          <a href="/events" className="font-bold text-lg hover:text-cyan-600 transition-colors flex items-center text-neutral-400">Events
+          <a href="/projects" className="font-semibold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Projects</a>
+          <a href="/blog" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Blog</a>
+          <a href="/events" className="font-bold text-xl hover:text-cyan-600 transition-colors flex items-center text-neutral-300">Events
             <i className="fa fa-circle text-xs ml-2 text-cyan-700 animate-pulse" aria-hidden="true"></i>
           </a>
-          <a href="/about" className="font-bold text-lg hover:text-cyan-600 transition-colors text-neutral-400">About</a>
-          <a href="/contact" className="font-bold text-lg hover:text-cyan-600 transition-colors text-neutral-400">Contact</a>
+          <a href="/about" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">About</a>
+          <a href="/contact" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Contact</a>
         </div>
       </nav>
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
