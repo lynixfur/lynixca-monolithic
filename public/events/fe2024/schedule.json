@@ -37,6 +37,24 @@
         "isConfirmed": false
       },
       {
+        "id": "b33cba30-7c4b-4587-8db3-d9242ee13e70",
+        "title": "Taming the Virtual Jungle (CCNB)",
+        "description": null,
+        "startsAt": "2024-03-14T20:00:00",
+        "endsAt": "2024-03-14T20:30:00",
+        "isServiceSession": true,
+        "isPlenumSession": false,
+        "speakers": [],
+        "categoryItems": [],
+        "questionAnswers": [],
+        "roomId": 99999,
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": null,
+        "isInformed": false,
+        "isConfirmed": false
+      },
+      {
         "id": "519140",
         "title": "(First Slot) Thursday Dance",
         "description": "TBD",
@@ -2465,6 +2483,24 @@
         "status": "Accepted",
         "isInformed": true,
         "isConfirmed": true
+      },
+      {
+        "id": "b33cba30-7c4b-4587-8db3-d9242ee13e70",
+        "title": "Blood on the Clocktower with Lynix",
+        "description": null,
+        "startsAt": "2024-03-16T21:00:00",
+        "endsAt": "2024-03-16T24:00:00",
+        "isServiceSession": true,
+        "isPlenumSession": false,
+        "speakers": [],
+        "categoryItems": [],
+        "questionAnswers": [],
+        "roomId": null,
+        "liveUrl": null,
+        "recordingUrl": null,
+        "status": null,
+        "isInformed": false,
+        "isConfirmed": false
       },
       {
         "id": "570688",
@@ -5135,6 +5171,11 @@
       {
         "id": 45675,
         "name": "Wellington",
+        "sort": 21
+      },
+      {
+        "id": 99999,
+        "name": "Virtual Event",
         "sort": 21
       }
     ]

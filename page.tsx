@@ -2,16 +2,20 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation'
+import Map from '@/components/Map';
 
+
+// START: Preserve spaces to avoid auto-sorting
+//import "leaflet/dist/leaflet.css";
+
+//import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
+
+//import "leaflet-defaulticon-compatibility";
 
 import moment from "moment";
-import dynamic from 'next/dynamic';
 
-// Thanks to Christophe for the dynamic import suggestion!
-const DynamicMap = dynamic(() => import('@/components/Map'), {
-    loading: () => <p>Loading Map...</p>,
-    ssr: false,
-})
+// END: Preserve spaces to avoid auto-sorting
+//import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 export default function Home() {
 
@@ -123,14 +127,12 @@ export default function Home() {
                         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-14">
                             <div>
                                 <h1 className="text-3xl font-semibold">Lynix&apos;s Current Location</h1>
-                                <p className='mt-2 text-neutral-400'>Don&apos;t miss Lynix! Use my map to find him and check out his current panel.</p>
-                                <p className="text-neutral-400 mt-2 p-3 mt-5 bg-neutral-800 rounded-md"><strong>Current Panel: Waiting for FE 2024</strong><br/>
-                                <i className="fa-solid fa-location-dot mr-1"></i>  {rooms.find((room: { id: any; }) => room.id === 0) ? rooms.find((room: { id: any; }) => room.id === 0).name : "Loading..."}</p>
-                                <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-3 my-10 hidden">
+                                <p className="text-neutral-400 mt-2">Current Panel: {"Unauthorized"}</p>
+                                <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-3 my-10">
                                     <i className="fa-solid fa-warning mr-2" /> You do not have current permission to view lynix&apos;s live location, please contact Lynix.
                                 </div>
                                 {/* Map */}
-                                <DynamicMap/>
+                                <Map/>
                             </div>
                             <div>
                                 <h1 className="text-3xl font-semibold">Request a Meetup with Lynix</h1>

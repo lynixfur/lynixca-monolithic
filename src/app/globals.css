@@ -33,3 +33,15 @@ body {
 .permanent-marker-regular {
   font-family: "Permanent Marker";
 }
+
+.leaflet-container .leaflet-control-attribution {
+  background: rgb(23 23 23 / 93%) !important;
+  @apply text-neutral-400;
+}
+
+.leaflet-bar a {
+  background: #252424 !important;
+  color: rgb(163 163 163 / 1) !important;
+  border: 0.5px solid rgb(163 163 163 / 1) !important;
+  margin-top: 5px;
+}
