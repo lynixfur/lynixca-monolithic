@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import SmallAlert from "@/components/SmallAlert";
+import FE from "@/components/modals/FE";
+import { useSearchParams } from "next/navigation";
 
 export default function Home() {
   return (
@@ -48,6 +50,7 @@ export default function Home() {
               </a>
           </div>
         </div>
+        <FE/>
     </main>
     </>
   );
