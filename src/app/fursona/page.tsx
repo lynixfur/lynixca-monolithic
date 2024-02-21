@@ -72,7 +72,9 @@ export default function Home() {
                         <strong>Artists:</strong> Goatfangs<br />
                         <strong>Status:</strong> Work in Progress (Part 1 of 3)<br />
                         <br />
-                        Here are some pictures of my fursuit being made and some pictures of myself wearing it at conventions or events.
+                        Here are some pictures of my fursuit being made and some pictures of myself wearing it at conventions or events. <br/><br/>
+
+                        My fursuit development has started with Goatfangs making me some paws for an upcoming convention in 2024 which is named Furnal Equinox. I'm excited to see the final product and wear it at the convention. As the project evolves more accessories and parts will be added to the suit. Stay tuned for more updates!
                     </p>
 
                     <div className="bg-neutral-800 p-5 rounded-md mt-5 flex flex-col justify-center items-center">
@@ -83,8 +85,12 @@ export default function Home() {
 
                     <h1 className="text-4xl font-semibold mt-10 text-cyan-500">Artwork / Gallery</h1>
 
+                    <p className="text-neutral-400 mt-2">
+                            Dive into a captivating collection of artwork featuring Lynix, my furry character. <br/>
+                            From digital masterpieces to playful doodles, witness the creativity and passion of the furry fandom.
+                    </p>
 
-                    <div className="grid md:grid-cols-7 gap-5 mt-10 w-full">
+                    <div className="grid md:grid-cols-5 gap-5 mt-10 w-full">
                     <div className="bg-neutral-800 p-5 rounded-md mt-5 flex flex-col justify-center items-center">
                             <img src="/fursona/gallery/lynixrender-fixed.png" alt="lynix" className="rounded mt-5 max-w-[150px] mb-2" />
                             <p className="mt-2 text-sm text-center">Concept Render of Lynix</p>
@@ -113,6 +119,14 @@ export default function Home() {
                             <img src="/fursona/gallery/card.png" alt="lynix" className="rounded mt-5 max-w-[150px] mb-2" />
                             <p className="mt-2 text-sm">Lynix FE 2024 NFC Card</p>
                             <p className="font-bold text-cyan-600 animate-pulse">Unknown</p>
+                        </div>
+
+                        <div className="bg-neutral-800 p-5 rounded-md mt-5 flex flex-col justify-center items-center">
+                            <div className="h-32 w-32 bg-neutral-600 animate-pulse flex items-center justify-center rounded-xl">
+                                Reveal Soon!
+                            </div>
+                            <p className="mt-2 text-sm">Secret FE 2024 Commission</p>
+                            <p className="font-bold text-cyan-600">KookiesCrafts</p>
                         </div>
                     </div>
                 </div>

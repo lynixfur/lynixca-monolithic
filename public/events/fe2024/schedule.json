@@ -2485,24 +2485,6 @@
         "isConfirmed": true
       },
       {
-        "id": "b33cba30-7c4b-4587-8db3-d9242ee13e70",
-        "title": "Blood on the Clocktower with Lynix",
-        "description": null,
-        "startsAt": "2024-03-16T21:00:00",
-        "endsAt": "2024-03-16T24:00:00",
-        "isServiceSession": true,
-        "isPlenumSession": false,
-        "speakers": [],
-        "categoryItems": [],
-        "questionAnswers": [],
-        "roomId": null,
-        "liveUrl": null,
-        "recordingUrl": null,
-        "status": null,
-        "isInformed": false,
-        "isConfirmed": false
-      },
-      {
         "id": "570688",
         "title": "Fursuit Care 101: Learn the basics",
         "description": "Just bought a fursuit? Curious about how fursuiters maintain their costumes? Listen as an experienced fursuit maker covers the basics of cleaning, storage and traveling etc ",

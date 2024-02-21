@@ -75,6 +75,9 @@ export default function Home() {
         <>
             <main className="">
                 <div className="mb-16 flex flex-col items-start">
+                    <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-0 my-10">
+                        <i className="fa-solid fa-exclamation-triangle mr-2" /> The resonite portal has been canceled at FE 2024 due to lack of players, ressources and preperation, I apologize for the inconvenience.
+                    </div>
                     {isDash ? (<><h1 className="text-4xl font-semibold">Lynix Convention Manager</h1>
                         <h3 className="text-neutral-200 mt-2 text-2xl mt-5">Furnal Equinox 2024</h3>
                         <p className="text-neutral-400 mt-2">LCM lets you organize meetups at the conventions you are attending, and lets you keep track of your schedule.</p>
@@ -132,33 +135,9 @@ export default function Home() {
                                 {/* Map */}
                                 <DynamicMap/>
                             </div>
-                            <div>
-                                <h1 className="text-3xl font-semibold">Request a Meetup with Lynix</h1>
-                                <p className="text-neutral-400 mt-2">Want to meet with me and potentially receive a sticker? Reserve your spot</p>
-
-                                {/* Name Field + Date Time + Location */}
-                                <div className="mt-5">
-                                    <label className="block text-neutral-400">Your Name</label>
-                                    <input type="text" className="w-full bg-neutral-800 rounded-xl p-3 text-neutral-100 mt-1 placeholder-neutral-200" placeholder="Your Name" />
-
-                                    <label className="block text-neutral-400 mt-5">Date & Time</label>
-                                    <input type="datetime-local" className="w-full bg-neutral-800 rounded-xl p-3 text-neutral-100 mt-1 " />
-
-                                    <label className="block text-neutral-400 mt-5">Location</label>
-                                    <input type="text" className="w-full bg-neutral-800 rounded-xl p-3 text-neutral-100 mt-1 placeholder-neutral-200" placeholder="Location" />
-
-                                    <button className="mt-5 inline-block bg-cyan-800 py-3 px-8 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
-                                        Request Meetup
-                                    </button>
-
-                                </div>
-                            </div>
                         </div>
                         <br /><br />
                     </>}
-                    <h1 className="text-3xl font-semibold">Current Panels</h1>
-                    <p className="text-neutral-400 mt-2">Jump into panels happening now!</p>
-
                     {/* Foreach Panel Card */}
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
                         {currentPanels.map((panel: any, index) => (
