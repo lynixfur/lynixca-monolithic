@@ -14,7 +14,7 @@ export default function Navbar() {
       <nav className="flex items-center justify-between">
         <a href="/" className="font-semibold text-lg flex items-center mr-10">
           <img src="/lynix.png" alt="lynix" className="h-[50px] w-[50px] mr-3 -mt-1.5" />
-          <h3 className='text-4xl font-extrabold'>LYNIX</h3>
+
         </a>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -31,6 +31,14 @@ export default function Navbar() {
           </a>
           <a href="/about" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">About</a>
           <a href="/contact" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Contact</a>
+
+          {/* Profile Picture */}
+          {/* New Account Feature */}
+          <div>
+            <img src="/fursona/gallery/lynixrender-fixed.png" alt="profile" className="h-10 w-10 rounded-full object-cover object-top border-2 border-neutral-600" />
+          </div>
+
+
         </div>
       </nav>
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>

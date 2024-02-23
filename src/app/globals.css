@@ -45,3 +45,12 @@ body {
   border: 0.5px solid rgb(163 163 163 / 1) !important;
   margin-top: 5px;
 }
+
+
+.divider {
+  @apply bg-neutral-950;
+}
+
+.divider .shape-fill {
+  @apply fill-neutral-900;
+}

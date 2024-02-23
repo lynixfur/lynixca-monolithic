@@ -25,7 +25,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
           <Navbar />
-          <main className="p-7 md:p-24">
+          <main className="min-h-screen">
           {children}
           </main>
       </body>

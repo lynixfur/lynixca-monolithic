@@ -4,8 +4,8 @@ import SmallAlert from "@/components/SmallAlert";
 export default function Home() {
     return (
         <>
-            <main className="">
-                <div className="mb-16 flex flex-col items-start">
+            <main className="flex justify-center mt-10">
+                <div className="mb-16 flex flex-col items-start container">
                     <SmallAlert />
                     <h1 className="text-4xl font-semibold">Events</h1>
                     <p className="text-neutral-400 mt-2">Here are some events that I will be attending shortly, get a chance to meet me there!</p>
