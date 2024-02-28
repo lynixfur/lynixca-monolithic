@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react";
 
 export default function LCMOverlay() {
@@ -17,7 +18,7 @@ export default function LCMOverlay() {
     return (
         <main className="bg-neutral-950">
             <div>
-                
+
             </div>
         </main>
     );
