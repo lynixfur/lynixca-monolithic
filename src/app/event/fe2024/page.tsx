@@ -73,8 +73,8 @@ export default function Home() {
 
     return (
         <>
-            <main className="">
-                <div className="mb-16 flex flex-col items-start">
+            <main className="flex justify-center mt-10">
+                <div className="mb-16 flex flex-col items-start container">
                     <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-0 my-10">
                         <i className="fa-solid fa-exclamation-triangle mr-2" /> The resonite portal has been canceled at FE 2024 due to lack of players, ressources and preperation, I apologize for the inconvenience.
                     </div>

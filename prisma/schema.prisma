@@ -1,0 +1,173 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+// Events like furry conventions
+model Event {
+  id        String      @id @default(uuid())
+  name      String
+  slug      String      @unique
+
+  // Event Details
+  bannerImage String?
+  description String?
+  location  String?
+  start     DateTime
+  end       DateTime
+
+  tokens    NFCToken[]
+  subEvents  SubEvent[] 
+  meetups   Meetup[]
+
+  // Is Furry Event?
+  isFurry   Boolean   @default(false)
+
+  // Attendees (many)
+  attendees  Attendee[]
+
+  // Timestamps
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  deletedAt DateTime?
+}
+
+model SubEvent {
+  id        String      @id @default(uuid())
+  eventId   String
+  slug      String      @unique
+
+  name      String
+  presenter String
+  location  String
+
+  start     DateTime
+  end       DateTime
+
+  event     Event       @relation(fields: [eventId], references: [id])
+
+  // Timestamps
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  deletedAt DateTime?
+}
+
+model Attendee {
+  id        String      @id @default(uuid())
+  
+  meetupId  String?
+  eventId   String?
+
+  // Attendee Data
+  meetup   Meetup?     @relation(fields: [meetupId], references: [id])
+  event    Event?      @relation(fields: [eventId], references: [id])
+
+  name      String
+  avatarUrl String?
+  preferedMeetupTime DateTime?
+}
+
+model Meetup {
+  id        String      @id @default(uuid())
+  eventId   String?
+  slug      String      @unique
+
+  name         String
+  description  String?
+  bannerImage  String?
+  tags         String[]
+
+  originalCreator String @default("Lynix")
+  telegramLink    String?
+
+  // Location Data
+  location  String?
+
+  // LCM GPS Coordinates
+  longitude Float?
+  latitude  Float?
+
+  start     DateTime?
+  end       DateTime?
+  isActive  Boolean?
+  isPublic  Boolean @default(false)
+
+  event     Event?       @relation(fields: [eventId], references: [id])
+
+  // Attendees (many)
+  attendees  Attendee[]
+
+  // Timestamps
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  deletedAt DateTime?
+}
+
+// NFC Cards, QR Codes and Paws!
+model NFCToken {
+  id        String   @id @default(uuid())
+  eventId   String? 
+  fursuitId String?
+  token     String   @unique
+
+  // Links and Events
+  redirectLink     String?
+
+  // Relations Between Events and Fursuit Owners
+  event     Event?    @relation(fields: [eventId], references: [id])
+  fursuit   FursuitData? @relation(fields: [fursuitId], references: [id])
+
+  isActive  Boolean
+  isFurry   Boolean   @default(false)
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+}
+
+model FursuitData {
+  id        String   @id @default(uuid())
+  slug      String   @unique
+
+  tokens   NFCToken[]
+
+  isActive  Boolean
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+}
+
+model Article {
+  id        String   @id @default(uuid())
+  slug      String   @unique
+
+  title       String
+  cardImage   String?
+  descripion  String?
+  content     String?
+  tags        String[]
+
+  isPublished Boolean @default(false)
+  isFeatured  Boolean @default(false)
+
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+}
+
