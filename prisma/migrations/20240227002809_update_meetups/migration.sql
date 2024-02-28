@@ -1,0 +1,12 @@
+-- DropForeignKey
+ALTER TABLE "Meetup" DROP CONSTRAINT "Meetup_eventId_fkey";
+
+-- AlterTable
+ALTER TABLE "Meetup" ALTER COLUMN "eventId" DROP NOT NULL,
+ALTER COLUMN "start" DROP NOT NULL,
+ALTER COLUMN "end" DROP NOT NULL,
+ALTER COLUMN "isActive" DROP NOT NULL,
+ALTER COLUMN "isPublic" SET DEFAULT false;
+
+-- AddForeignKey
+ALTER TABLE "Meetup" ADD CONSTRAINT "Meetup_eventId_fkey" FOREIGN KEY ("eventId") REFERENCES "Event"("id") ON DELETE SET NULL ON UPDATE CASCADE;
