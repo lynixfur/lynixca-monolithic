@@ -13,20 +13,16 @@ import WhoAmI from "@/components/pages/home/WhoAmI";
 export default function Home() {
   return (
     <>
-    <main className="overflow-x-hidden">
+      <main className="overflow-x-hidden">
         {/* NFC Component for FE */}
-        <FE/>
+        <FE />
 
 
-        <Welcome/>
-        <WhoAmI/>
-        <VirtualReality/>
-        <div className="flex justify-center">
-          <div className="container py-2">
-            <p>Copyright {new Date().getFullYear()} Lynix. All rights reserved.</p>
-          </div>
+        <Welcome />
+        <div className="py-4 text-sm md:px-24">
+          <p>Copyright {new Date().getFullYear()} Lynix. All rights reserved.</p>
         </div>
-    </main>
+      </main>
     </>
   );
 }

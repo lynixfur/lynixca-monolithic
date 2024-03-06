@@ -19,7 +19,7 @@ export default function Meetup({ params }: { params: { id: string } }) {
 
     useEffect(() => {
         document.title = "Meetup - Furnal Equinox 2024";
-        fetch(`/api/meetup/${params.id}`)
+        fetch(`/api/v2/meetup/${params.id}`)
             .then(response => response.json())
             .then(data => setMeetup(data))
             .catch(error => console.error('Error:', error));
@@ -30,7 +30,7 @@ export default function Meetup({ params }: { params: { id: string } }) {
             <div className="mb-16 flex flex-col items-center justify-center container">
                 {/* Loading Spinner */}
                 
-                <h1 className="font-semibold text-cyan-600 animate-pulse text-4xl text-center"><i className="fa-solid fa-spinner animate-spin"></i><br/><span className='text-xl'>Your meetup will be ready shortly!</span></h1>
+                <p className="text-neutral-400 mt-2"><i className="fa-solid fa-exclamation-triangle mr-1"></i> This page is currently unavailable because the necessary API module is missing.</p>
             </div>
         </main>
     );

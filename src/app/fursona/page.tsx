@@ -63,6 +63,7 @@ export default function Home() {
                     <div className="grid md:grid-cols-2 gap-5 mt-5 w-full md:w-1/2">
                         <img src="/fursona/ref/VRC3.png" alt="lynix" className="rounded" />
                         <img src="/fursona/ref/VRC4.png" alt="lynix" className="rounded" />
+                        <img src="/fursona/gallery/card.png" alt="lynix" className="rounded" />
                     </div>
 
 
