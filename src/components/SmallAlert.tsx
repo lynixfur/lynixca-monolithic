@@ -16,14 +16,14 @@ export default function SmallAlert() {
     return (
         <div>
             {daysLeft > 0 && (
-                <div className="bg-cyan-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-0 my-10">
-                    <i className="fa-solid fa-bullhorn mr-2" /> Lynix is going to Toronto in {daysLeft} days! Get ready for the meetup, convention stickers will be provided!
+                <div className="bg-cyan-950 py-2 px-5 font-semibold -ml-1 md:mt-0 md:px-24">
+                    <i className="fa-solid fa-calendar mr-2" /> Lynix is going to FE2024 in {daysLeft} days, a new adventure begins in the city of Toronto, ON!
                 </div>
             )}
 
             {daysLeft < 0 && (
-                <div className="bg-green-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-0 my-10">
-                    <i className="fa-solid fa-paw mr-2" /> The FE2024 is live now, and fun awaits! Join us in Toronto, ON!
+                <div className="bg-green-950 py-2 px-5 font-semibold -ml-1 md:mt-0 md:px-24">
+                    <i className="fa-solid fa-paw mr-2" /> The FE2024 is live now, and fun awaits! Join us in Toronto, ON! Add me on telegram to meet me! @lynixfur
                 </div>
             )}
         </div>
