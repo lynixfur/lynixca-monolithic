@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 
 // Prepare for cloudflare edge deployment
-export const runtime = "edge";
+export const dynamic = "force-static";
 
 export default function RootLayout({
   children,
