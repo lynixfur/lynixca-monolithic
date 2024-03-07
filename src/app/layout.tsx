@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   description: "Step into my personal corner of the internet, where I graciously invite you to peruse through a collection of my projects, delve into my thoughts, and explore snippets of my code. Welcome to my digital space.",
 };
 
+
+// Prepare for cloudflare edge deployment
+export const runtime = "edge";
+
 export default function RootLayout({
   children,
 }: Readonly<{
