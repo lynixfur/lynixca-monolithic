@@ -10,26 +10,30 @@ export default function Welcome() {
                         Hi, I&apos;m Lynix!
                     </h1>
                     <p className="pt-4 text-lg text-neutral-400 text-center px-4 md:px-0">
-                        I&apos;m a Canadian VR enthusiast, Developer, Cybersecurity Student, and Furry, I&apos;m seeking opportunities to
-                        change the world for better for everyone with IT.
+                        I&apos;m a passionate Canadian cybersecurity analyst, software developer, and furry ready to leverage IT for positive global change.
                     </p>
                     <div className="grid gap-5 grid-cols-5 mt-10">
-                            <a href="https://discord.com" aria-label="Discord">
-                                <i className="fa-brands fa-discord text-4xl text-neutral-400" />
-                            </a>
-                            <a href="https://t.me/lynixfur" aria-label="Telegram">
-                                <i className="fa-brands fa-telegram text-4xl text-neutral-400" />
-                            </a>
-                            <a href="https://github.com/lynixfur" aria-label="GitHub">
-                                <i className="fa-brands fa-github text-4xl text-neutral-400" />
-                            </a>
-                            <a href="https://twitter.com/lynixfur" aria-label="Twitter">
-                                <i className="fa-brands fa-twitter text-4xl text-neutral-400" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/anthony-roy-6316a624b/" aria-label="LinkedIn">
-                                <i className="fa-brands fa-linkedin text-4xl text-neutral-400" />
-                            </a>
-                        </div>
+                        <a href="https://discord.com" aria-label="Discord">
+                            <i className="fa-brands fa-discord text-4xl text-neutral-400" />
+                        </a>
+                        <a href="https://t.me/lynixfur" aria-label="Telegram">
+                            <i className="fa-brands fa-telegram text-4xl text-neutral-400" />
+                        </a>
+                        <a href="https://github.com/lynixfur" aria-label="GitHub">
+                            <i className="fa-brands fa-github text-4xl text-neutral-400" />
+                        </a>
+                        <a href="https://twitter.com/lynixfur" aria-label="Twitter">
+                            <i className="fa-brands fa-twitter text-4xl text-neutral-400" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/anthony-roy-6316a624b/" aria-label="LinkedIn">
+                            <i className="fa-brands fa-linkedin text-4xl text-neutral-400" />
+                        </a>
+                    </div>
+                    <div className="flex flex-col md:flex-row justify-center space-x-0 md:space-x-4 text-center">
+                        <a href="#about" className="mt-3 md:mt-10 bg-cyan-800 py-3 px-10 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
+                            Contact Me
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
-import SmallAlert from "@/components/SmallAlert";
+import APIHealthCheck from "@/components/APIHealthCheck";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,10 +10,6 @@ export const metadata: Metadata = {
   title: "LynixCA",
   description: "Step into my personal corner of the internet, where I graciously invite you to peruse through a collection of my projects, delve into my thoughts, and explore snippets of my code. Welcome to my digital space.",
 };
-
-
-// Prepare for cloudflare edge deployment
-export const dynamic = "force-static";
 
 export default function RootLayout({
   children,
@@ -30,7 +26,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
           <Navbar />
-          <SmallAlert />
+          <APIHealthCheck />
           <main className="min-h-screen">
           {children}
           </main>

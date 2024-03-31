@@ -1,98 +1,233 @@
 import Image from "next/image";
-import SmallAlert from "@/components/SmallAlert";
 
 export default function Home() {
     return (
         <>
-            <main className="flex justify-center mt-10">
-                <div className="mb-16 flex flex-col items-start container">
-                    <SmallAlert />
-                    <div className="flex space-x-4 items-center">
-                        <img src="/lynix.png" className="w-20 mb-1.5" alt="lynix" />
-                        <h1 className="text-5xl font-semibold">My Fursona - Lynix</h1>
+            <main className="flex flex-col justify-center items-center">
+                <div className="w-full" style={{ "background": "url(/toronto_lookout.jpg)", "backgroundSize": "cover", "backgroundPosition": "center" }}>
+                    <div className="w-full h-[400px] flex items-center justify-center bg-cyan-950 bg-opacity-80">
+                        <div><h1 className="text-5xl font-semibold text-cyan-500 text-center">Lynix</h1>
+                            <p className="text-center mt-3 text-neutral-300 text-xl">A Freakhound saving us from cyber attacks.</p></div>
                     </div>
-                    <p className="text-neutral-400 mt-5">Here&apos;s Lynix! My fursona and mascot of my cybersecurity identity. <br /><br />
-                        Lynix is a unique character known as a Freakhound, a canine hybrid with
-                        reptilian traits on its tail. Hailing from deep space, Lynix possesses
-                        advanced technological knowledge and aids in protecting Earth against cyber
-                        attacks. With striking dual-colored eyes (green and blue) and glowing
-                        details that respond to its environment and behavior, Lynix is equipped with
-                        an embedded implant that enables survival in various conditions, including
-                        the ability to breathe in space without oxygen. Supported by the Freakhound
-                        Network, Lynix instantly gains intelligence and detects threats.
-                        Additionally, Lynix can simulate real-world events and technological
-                        scenarios. Apart from its technological expertise, Lynix also takes joy in
-                        piloting spacecrafts and planes.<br /><br />
-                        <strong>Species:</strong> Freakhound<br />
-                        <strong>First Convention:</strong> Furality Luma Festival</p>
+                </div>
+                <div className="my-16 flex flex-col items-start container mt-10  md:px-0 px-5">
+                    <p className="text-neutral-400"><span className="text-cyan-600 font-semibold">Fursona:</span> A fursona is a personalized animal character created by someone in the furry fandom. Fursonas may be anthropomorphic personas, idealized versions of their owners, fleshed out role-play characters, or simply digital mascots.</p>
+                    <br /><p className="text-neutral-400"><span className="text-cyan-600 font-semibold">Fursuit:</span> A fursuit is a costume that represents a person's fursona. Fursuits are often worn to furry conventions, where furries can meet and interact with other members of the furry fandom. Fursuits can be partial, covering only part of the body, or full, covering the entire body.</p>
+                    <div className="flex items-center w-full my-5">
+                        <span className="flex-shrink text-cyan-600 font-bold text-3xl mr-5">
+                            About Lynix
+                        </span>
+                        <div className="flex-grow border-t border-dashed border-green-900" />
+                    </div>
+                    <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-0 mt-30">
+                        <i className="fa-solid fa-exclamation-triangle mr-2" /> WARNING: During Furnal Equinox 2024, Lynix's fursona was slightly alterned with new star patterns and a new tail coloring, please contact lynix for accurate descriptions!
+                    </div>
+                    <div className="flex md:flex-row flex-col py-8 md:space-x-10">
+                        <div className="flex flex-col md:w-1/2 w-full md:py-0 py-8">
+                            <img
+                                src="/description.png"
+                                className="w-[24rem] md:w-[48rem] self-center rounded-2xl"
+                            />
+                        </div>
+                        <div className="md:w-1/2 w-full md:px-0 px-2 flex flex-col">
+                            <p className="text-justify leading-8 text-neutral-400">
+                                Meet the extraordinary Lynix, a Freakhound like no other. This canine hybrid, a mesmerizing blend of fur and scales, boasts a powerful reptilian tail and eyes that shift with an otherworldly luminescence. Endowed with the ability to breathe even in the airless void of space, Lynix is a true creature of the cosmos. Connected to the vast Freakhound Network, this cybernetic marvel taps into a boundless stream of intelligence, instantly detecting threats both physical and digital. Lynix's unique mind can even simulate real-world events and technological scenarios, preparing this Freakhound for any challenge the universe might throw its way.
+                            </p>
+                            <div className="flex flex-col pt-8">
+                                <span className="text-lg text-justify leading-8 text-neutral-400 font-semibold text-xl">
+                                    Fursona Colors
+                                </span>
+                                <div className="flex flex-col md:flex-row gap-4 pt-4">
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-10 h-10 rounded-lg bg-cyan-600 tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-10 h-10 rounded-lg bg-blue-800 tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-10 h-10 rounded-lg bg-green-600 tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-10 h-10 rounded-lg bg-green-700 tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-10 h-10 rounded-lg bg-white tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-10 h-10 rounded-lg bg-black tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center w-full my-5">
+                        <span className="flex-shrink text-cyan-600 font-bold text-3xl mr-5">
+                            Fursuit
+                        </span>
+                        <div className="flex-grow border-t border-dashed border-green-900" />
+                    </div>
+                    <div className="flex md:flex-row flex-col py-8 md:space-x-10">
+                        <div className="md:w-1/2 w-full md:px-0 px-2 flex flex-col">
+                            <p className="text-justify leading-8 text-neutral-400">
+                                My fursuit represents my Freakhound fursona in real life! It's a partial fursuit, which means it only covers my head, hands, and feet. The head is the most important part of the fursuit, as it's where the character comes to life. The head is made of foam and fur, and it's designed to look like my fursona's head. The hands and feet are also made of foam and fur, and they're designed to look like my fursona's paws. I love wearing my fursuit because it allows me to bring my fursona to life and interact with other furries in real life. It's a fun and creative way to express myself and connect with other members of the furry fandom but it is not completely finished yet, but it is <span className="text-green-600">66%</span> completed! I can't wait to show it off at conventions and furry events! I plan on commissioning <span className="text-cyan-600 font-semibold">Made Fur You</span> for my full suit!
+                            </p>
+                            <div className="flex flex-col md:flex-row md:space-x-4">
+                                <div className="w-full md:w-1/2">
+                                    <p className="text-lg text-justify leading-8 text-neutral-400 font-semibold text-xl mt-5">
+                                        Partial Suit - <span className="text-green-600">66%</span> Completed
+                                    </p>
+                                    {/* Progress Bar */}
+                                    <div className="w-full bg-neutral-800 rounded-lg overflow-hidden mt-2 h-1">
+                                        <div className="bg-green-600 h-1" style={{ width: "66%" }} />
+                                    </div>
+                                </div>
+                                <div className="w-full md:w-1/2">
+                                    <p className="text-lg text-justify leading-8 text-neutral-400 font-semibold text-xl mt-5">
+                                        Full Suit - <span className="text-cyan-600">3%</span> Funded
+                                    </p>
+                                    {/* Progress Bar */}
+                                    <div className="w-full bg-neutral-800 rounded-lg overflow-hidden mt-2 h-1">
+                                        <div className="bg-cyan-600 h-1" style={{ width: "3%" }} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex flex-col md:w-1/2 w-full md:py-0 py-8">
+                            <img
+                                src="/fursuit.jpg"
+                                className="w-[24rem] md:w-[48rem] self-center aspect-video object-cover rounded-2xl"
+                            />
+                        </div>
+                    </div>
+                    <div className="flex items-center w-full my-5">
+                        <span className="flex-shrink text-cyan-600 font-bold text-3xl mr-5">
+                            Credits
+                        </span>
+                        <div className="flex-grow border-t border-dashed border-green-900" />
+                    </div>
+                    <p className="text-neutral-400">Thanks to <span className="text-cyan-600 font-semibold">DeadDogDrool</span> for making my Reference Sheet! And for both <span className="text-cyan-600 font-semibold">Goatfangs</span>, <span className="text-cyan-600 font-semibold">NordstromKaiju</span> for working on my partial fursuit! Stickers are designed by <span className="text-cyan-600 font-semibold">Remy</span> and <span className="text-cyan-600 font-semibold">KookiesCrafts</span>!</p>
 
-                    <br />
-
-                    <p className="mt-3 text-base sm:text-md text-neutral-400">
-                        <span className="text-cyan-500 text-md font-bold">What&apos;s a fursona?</span> A fursona
-                        is a customized animal character representing someone in the furry fandom,
-                        ranging from anthropomorphic personas to roleplay characters or digital
-                        mascots.
-                    </p>
-                    <p className="text-base sm:text-md mt-2 text-neutral-400">
-                        <span className="text-cyan-500 text-md  font-bold">What&apos;s a furry?</span> A furry is
-                        someone who is a fan or enthusiast of characters that depict animals with
-                        human characteristics, such as talking, walking on two legs, and displaying
-                        human-like emotions and behaviors.
-                    </p>
-
-                    <h1 className="text-4xl font-semibold mt-10 text-cyan-500">Refsheet</h1>
-                    <p className="text-neutral-400 mt-2">Lynix is a deep space freakhound with dark blue accents, white body and black floof.</p>
-                    <br />
-                    <p className="text-neutral-400 mt-2">
-                        These colors serve as guiding elements for artists, ensuring the most optimal design alignment for Lynix while maintaining a consistent and cohesive visual identity.
-                    </p>
-                    <div className="flex flex-wrap gap-4 mt-3">
-                        <div className="h-12 w-12 sm:h-16 sm:w-16 bg-black border-2 border-neutral-700"></div>
-                        <div className="h-12 w-12 sm:h-16 sm:w-16 bg-neutral-200 border-2 border-neutral-700"></div>
-                        <div className="h-12 w-12 sm:h-16 sm:w-16 bg-green-600 border-2 border-neutral-700"></div>
-                        <div className="h-12 w-12 sm:h-16 sm:w-16 bg-cyan-600 border-2 border-neutral-700"></div>
-                        <div className="h-12 w-12 sm:h-16 sm:w-16 border-2 border-neutral-700" style={{ "backgroundColor": "#025ca9" }}></div>
+                </div>
+                <div className="mb-16 flex flex-col items-start container mt-10  md:px-0 px-5 hidden">
+                    <div className="flex items-center w-full">
+                        <span className="flex-shrink text-cyan-600 font-bold text-3xl mr-5">
+                            Description
+                        </span>
+                        <div className="flex-grow border-t border-dashed border-green-900" />
+                    </div>
+                    <br /><br />
+                    <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-0 my-10 mt-30">
+                        <i className="fa-solid fa-exclamation-triangle mr-2" /> WARNING: During Furnal Equinox 2024, Lynix the Freahkound has had a tail redesign, please contact lynix for live tail pictures thank you! The ref sheet may be inaccurate until after the convention!
+                    </div>
+                    <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-0 my-10 mt-30">
+                        <i className="fa-solid fa-exclamation-triangle mr-2" /> WARNING: During Furnal Equinox 2024, Lynix the Freahkound has had a backing and marking redesign, please contact lynix for live tail pictures thank you! The ref sheet may be inaccurate until after the convention!
+                    </div>
+                    <div className="flex md:flex-row flex-col py-8">
+                        <div className="flex flex-col md:w-1/2 w-full md:py-0 py-8 px-8">
+                            <img
+                                src="/description.png"
+                                className="w-[24rem] md:w-[48rem] self-center"
+                            />
+                        </div>
+                        <div className="md:w-1/2 w-full md:px-0 px-8 flex flex-col">
+                            <p className="text-lg text-justify leading-8 text-neutral-400">
+                                Meet the extraordinary Lynix, a Freakhound like no other. This canine hybrid, a mesmerizing blend of fur and scales, boasts a powerful reptilian tail and eyes that shift with an otherworldly luminescence. Endowed with the ability to breathe even in the airless void of space, Lynix is a true creature of the cosmos. Connected to the vast Freakhound Network, this cybernetic marvel taps into a boundless stream of intelligence, instantly detecting threats both physical and digital. Lynix's unique mind can even simulate real-world events and technological scenarios, preparing this Freakhound for any challenge the universe might throw its way.
+                            </p>
+                            <div className="flex flex-col pt-8">
+                                <span className="text-lg text-justify leading-8 text-neutral-400 font-semibold text-xl">
+                                    Colors
+                                </span>
+                                <div className="flex flex-col md:flex-row gap-4 pt-4">
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-16 h-16 rounded-lg bg-cyan-600 tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-16 h-16 rounded-lg bg-blue-800 tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-16 h-16 rounded-lg bg-green-600 tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-16 h-16 rounded-lg bg-green-700 tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-16 h-16 rounded-lg bg-white tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <button
+                                            className="w-16 h-16 rounded-lg bg-black tooltip tooltip-bottom transition shadow-md hover:shadow-xl"
+                                            data-tip="Click to copy color">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Grid of 2 cols 2 rows */}
-                    <div className="grid md:grid-cols-2 gap-5 mt-10 w-full md:w-1/2">
-                        <img src="/fursona/ref/VRC5.png" alt="lynix" className="rounded" />
-                        <img src="/fursona/ref/VRC2.png" alt="lynix" className="rounded" />
+                    <div className="flex items-center w-full mt-10">
+                        <span className="flex-shrink mr-5 text-cyan-600 font-bold text-3xl">
+                            Lore
+                        </span>
+                        <div className="flex-grow border-t border-dashed border-green-900" />
                     </div>
-                    <div className="grid md:grid-cols-2 gap-5 mt-5 w-full md:w-1/2">
-                        <img src="/fursona/ref/VRC3.png" alt="lynix" className="rounded" />
-                        <img src="/fursona/ref/VRC4.png" alt="lynix" className="rounded" />
-                        <img src="/fursona/gallery/card.png" alt="lynix" className="rounded" />
+                    <p className="text-neutral-500"><i className="fa-solid fa-triangle-exclamation my-4"></i> No description available for this section.</p>
+
+                    <div className="flex items-center w-full mt-10">
+                        <span className="flex-shrink mr-5 text-cyan-600 font-bold text-3xl">
+                            Fursuit Details
+                        </span>
+                        <div className="flex-grow border-t border-dashed border-green-900" />
                     </div>
+                    <p className="text-neutral-500"><i className="fa-solid fa-triangle-exclamation my-4"></i> No description available for this section.</p>
 
-
-                    <h1 className="text-4xl font-semibold mt-10 text-cyan-500">Fursuit Area</h1>
-                    <p className="text-neutral-400 mt-2">
-                        <strong>Type:</strong> Partial<br />
-                        <strong>Artists:</strong> Goatfangs<br />
-                        <strong>Status:</strong> Work in Progress (Part 1 of 3)<br />
-                        <br />
-                        Here are some pictures of my fursuit being made and some pictures of myself wearing it at conventions or events. <br /><br />
-
-                        My fursuit development has started with Goatfangs making me some paws for an upcoming convention in 2024 which is named Furnal Equinox. I&apos;m excited to see the final product and wear it at the convention. As the project evolves more accessories and parts will be added to the suit. Stay tuned for more updates!
-                    </p>
-
-                    <div className="bg-neutral-800 p-5 rounded-md mt-5 flex flex-col justify-center items-center">
-                        <img src="/fursona/fursuit/PAW_WIP2.png" alt="lynix" className="rounded mt-5 max-w-full md:max-w-[350px] mb-2" />
-                        <p className="mt-2 text-sm">This is a WIP Photo of Lynix&apos;s paws being made for FE 2024</p>
-                        <p className="font-bold text-cyan-600">Goatfangs - 20 Feb 2024</p>
+                    <div className="flex items-center w-full mt-10">
+                        <span className="flex-shrink mr-5 text-cyan-600 font-bold text-3xl">
+                            Stickers
+                        </span>
+                        <div className="flex-grow border-t border-dashed border-green-900" />
                     </div>
+                    <p className="text-neutral-500"><i className="fa-solid fa-triangle-exclamation my-4"></i> No stickers available.</p>
 
-                    <h1 className="text-4xl font-semibold mt-10 text-cyan-500">Artwork / Gallery</h1>
-
-                    <p className="text-neutral-400 mt-2">
-                        Dive into a captivating collection of artwork featuring Lynix, my furry character. <br />
-                        From digital masterpieces to playful doodles, witness the creativity and passion of the furry fandom.
-                    </p>
-
-                    <p className="mt-10 text-red-700 font-bold">Content Error - Failed to fetch</p>
-
+                    <div className="flex items-center w-full mt-10">
+                        <span className="flex-shrink mr-5 text-cyan-600 font-bold text-3xl">
+                            Gallery
+                        </span>
+                        <div className="flex-grow border-t border-dashed border-green-900" />
+                    </div>
+                    <p className="text-neutral-500"><i className="fa-solid fa-triangle-exclamation my-4"></i> No artwork available.</p>
                 </div>
             </main>
         </>
