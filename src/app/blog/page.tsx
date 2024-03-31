@@ -28,8 +28,8 @@ export default function Blog() {
     return (
         <>
             <main className="flex flex-col justify-center items-center">
-                <div className="w-full" style={{"background": "url(/torontofe.jpg)", "backgroundSize": "cover", "backgroundPosition": "center"}}>
-                    <div className="w-full h-[400px] flex items-center justify-center bg-cyan-950 bg-opacity-80">
+                <div className="w-full" style={{"background": "url(/fe2024/toronto.jpg)", "backgroundSize": "cover", "backgroundPosition": "center"}}>
+                    <div className="w-full h-[400px] flex items-center justify-center bg-cyan-950 bg-opacity-70">
                         <div><h1 className="text-5xl font-semibold text-cyan-500 text-center">Cybernetic Blog</h1>
                             <p className="text-center mt-3 text-neutral-300 text-xl">Come on in, my digital journal is open!</p></div>
                     </div>

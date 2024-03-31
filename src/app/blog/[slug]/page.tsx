@@ -32,11 +32,11 @@ export default async function Blog({ params }: { params: { slug: string } }) {
             <main className="flex flex-col justify-center items-center">
                 <div className="w-full" style={{ "background": "url(/torontofe.jpg)", "backgroundSize": "cover", "backgroundPosition": "center" }}>
                     <div className="w-full h-[400px] flex items-center justify-center bg-cyan-950 bg-opacity-80">
-                        <div className="w-3/4">
-                            <h1 className="text-5xl font-semibold text-cyan-500 text-left">{data.title}</h1>
-                            <p className="text-center mt-3 text-neutral-300 text-xl flex items-center"><span className="mr-2">Posted {moment(data.created_at).format('MMMM Do YYYY')} by</span> <img src="/fursona/gallery/pfp.png" className="h-6 w-6 rounded-full mr-1" /> <span className="font-semibold">{data.author}</span></p>
+                        <div className="w-full md:w-3/4 px-5 md:px-0">
+                            <h1 className="text-3xl md:text-5xl font-semibold text-cyan-500 text-center md:text-left">{data.title}</h1>
+                            <p className="text-center mt-3 text-neutral-300 text-xl flex items-center flex-col md:flex-row"><span className="mr-2">Posted {moment(data.created_at).format('MMMM Do YYYY')} by</span> <span className="flex items-center"><img src="/fursona/gallery/pfp.png" className="h-6 w-6 rounded-full mr-1" /> <span className="font-semibold">{data.author}</span></span></p>
                             {/* Blog Tags */}
-                            <div className="flex items-center mt-5">
+                            <div className="hidden md:flex items-center mt-5">
                                 {/* data.tags.map((tag: any) => <a href="#" className="bg-cyan-600 text-neutral-900 font-bold px-5 py-3 rounded-full mr-2">{tag}</a>)*/}
                                 {data.is_furry && <a href="#" className="bg-green-600 text-neutral-900 font-bold px-5 py-1.5 rounded-full mr-2">Furry</a>}
                                 {data.is_furry && <a href="#" className="bg-green-600 text-neutral-900 font-bold px-5 py-1.5 rounded-full mr-2">Furry Convention</a>}
@@ -51,4 +51,22 @@ export default async function Blog({ params }: { params: { slug: string } }) {
             </main>
         </>
     );
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+    const data: any = await getArticle(params.slug);
+
+    if (!data) {
+        return {
+            title: "Article Not Found",
+            description: "The article you are looking for could not be found."
+        };
+    }
+
+    return {
+        title: `Lynix Blog - ${data.title}`,
+        description: data.content_desc,
+        keywords: ['Furry'],
+        authors: [{ name: 'Lynix' }],
+    }
 }

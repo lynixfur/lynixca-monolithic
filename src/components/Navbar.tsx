@@ -88,7 +88,7 @@ export default function Navbar() {
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <a href="/blog" className="font-semibold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Blog</a>
-            <a href="#" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Projects</a>
+            <a href="/projects" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Projects</a>
             <a href="/fursona" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Fursona</a>
             <a href="/store" className="font-bold text-xl hover:text-cyan-600 transition-colors flex items-center text-neutral-300 hidden">Freaked Howls
               <p className='text-sm bg-cyan-900 hover:text-white py-1.5 px-3 rounded-full ml-2'>New!</p>
