@@ -1,10 +1,3 @@
-import Image from "next/image";
-import Navbar from "../components/Navbar";
-import SmallAlert from "@/components/APIHealthCheck";
-import FE from "@/components/modals/FE";
-import { useSearchParams } from "next/navigation";
-
-
 import Welcome from "@/components/pages/home/Welcome";
 
 

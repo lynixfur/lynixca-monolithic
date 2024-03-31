@@ -7,12 +7,6 @@ import { useSearchParams } from 'next/navigation'
 import moment from "moment";
 import dynamic from 'next/dynamic';
 
-// Thanks to Christophe for the dynamic import suggestion!
-const DynamicMap = dynamic(() => import('@/components/Map'), {
-    loading: () => <p>Loading Map...</p>,
-    ssr: false,
-})
-
 export default function Home() {
 
     // Fetch panels from /events/fe2024/schedule.json

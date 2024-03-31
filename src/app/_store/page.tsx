@@ -1,5 +1,4 @@
 import Image from "next/image";
-import SmallAlert from "@/components/SmallAlert";
 
 export default function Store() {
     return (
