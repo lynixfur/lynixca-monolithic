@@ -128,15 +128,3 @@ body {
 ::-webkit-scrollbar-thumb {
   @apply bg-cyan-600;
 }
-
-
-/* boop */
-.squished {
-  animation: bounceBack 0.3s ease;
-}
-
-@keyframes bounceBack {
-  0% { height: 45px; } /* Adjusted height for squishing effect */
-  50% { height: 35px; } /* Increased height for bounce effect */
-  100% { height: 50px; } /* Back to original height */
-}
