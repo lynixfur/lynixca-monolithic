@@ -18,6 +18,9 @@ export default function Home() {
     // Fetch panels from /events/fe2024/schedule.json
     const [panels, setPanels]: any = useState([]);
     const [fullPanels, setFullPanels] = useState([]); // [Full Schedule]
+    const [panelSearch, setPanelSearch] = useState('');
+    const [filterPanels, setFilterPanels] = useState([]);
+    const [showHappeningNow, setShowHappeningNow] = useState(true);
     const rooms = [
         {
             "id": 1,
@@ -157,17 +160,18 @@ export default function Home() {
                 console.log(data);
 
                 // Sort the panels by start date using Moment.js
-                const sortedPanels = data.sort((a: any, b: any) => {
+                /*const sortedPanels = data.sort((a: any, b: any) => {
                     return moment(a.startDate).diff(moment(b.startDate));
-                });
+                });*/
 
                 // Set Upcoming Next 3 Panels
-                setPanels(sortedPanels.slice(0, 10));
+                setPanels(data.slice(0, 10));
 
 
 
                 // Set Full Schedule
-                setFullPanels(sortedPanels);
+                setFullPanels(data);
+                setFilterPanels(data);
 
                 // Set Rooms
                 //setRooms(data.rooms);
@@ -186,12 +190,12 @@ export default function Home() {
     }, [fullPanels, filter]);
 
 
-    useEffect(() => {
+    /*useEffect(() => {
         // Scroll to the current panel card when filter changes
         if (currentPanelRef.current) {
             currentPanelRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
         }
-    }, [filter]);
+    }, [filter]);*/
 
     // Function to handle filter change
     const handleFilterChange = (filterOption: string) => {
@@ -204,38 +208,80 @@ export default function Home() {
 
     const isDash = dash === 'lcmdash';
 
+    const handleSearchChange = (event: any) => {
+        setPanelSearch(event.target.value);
+    };
+
+    useEffect(() => {
+        console.warn("Changing Filters...")
+
+        const filteredAndSortedPanels = fullPanels
+        .filter((panel: any) => {
+          // Filter by day
+          if (filter !== "All") {
+            const panelDay = moment(panel.start).format('dddd');
+            if (panelDay !== filter) {
+              return false;
+            }
+          }
+          // Filter by search query
+          if (panelSearch) {
+            const query = panelSearch.toLowerCase();
+            return (
+              panel.title.toLowerCase().includes(query)
+              //panel.description.toLowerCase().includes(query)
+            );
+          }
+          return true;
+        })
+        .sort((a: any, b: any) => moment(a.start).diff(moment(b.start)));
+        console.info("Found " + filteredAndSortedPanels.length + " entries.")
+
+        setFilterPanels(filteredAndSortedPanels)
+    }, [panelSearch, filter])
+    
 
     return (
         <>
             <main className="flex justify-center mt-10 md:px-10 px-3">
                 <div className="mb-16 flex flex-col items-start container">
-                    <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-0 my-10">
-                        <i className="fa-solid fa-exclamation-triangle mr-2" /> This is not an official convention application, this is just to make it easier to manage the panels during the event!
+                    <div className="font-semibold text-red-600 px-2 py-3">
+                        <i className="fa-solid fa-exclamation-triangle mr-2" /> This is not a official panel list, this is community built by Lynix!
                     </div>
-                    <h1 className="text-4xl font-semibold">Lynix Convention Manager - Canfurence 2024</h1>
-                    <p className="text-neutral-400 mt-2 mb-10">LCM lets you organize meetups at the conventions you are attending, and lets you keep track of your schedule.</p>
+                    <h1 className="text-6xl font-semibold mb-2">Canfurence 2024</h1>
+                    <button className='mt-3 font-semibold text-cyan-600 mb-10' onClick={() => setShowHappeningNow(!showHappeningNow)}><i className="fa-solid fa-eye"></i> {showHappeningNow ? 'Hide' : 'Show'} Happening Now</button>
+
+                    <p className="text-neutral-400 mt-2 mb-10 hidden">LCM lets you organize meetups at the conventions you are attending, and lets you keep track of your schedule.</p>
+                    
+                    {showHappeningNow && <>
                     <h1 className="text-3xl font-semibold">Happening Now</h1>
+                    <p className="text-neutral-400 mt-2 mb-10">Nothing is happening right now! Come back later!</p>
+                    
                     {/* Foreach Panel Card */}
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-10">
-                        {currentPanels.map((panel: any, index) => (
+                        {currentPanels.sort((a: any, b: any) => moment(a.start).diff(moment(b.start))).map((panel: any, index) => (
                             <div key={index} className="border border-cyan-700 shadow-lg shadow-cyan-700/50 bg-neutral-800 rounded-xl relative overflow-hidden flex items-stretch border border-neutral-700 mt-5 w-full">
                                 <div className="p-5">
                                     <h2 className="text-xl font-semibold">{panel.title}</h2>
                                     <p className="text-neutral-400 mt-2">{moment(panel.start).format('dddd, h:mm:ss a')} - {moment(panel.end).format('h:mm:ss a')}</p>
-                                    <p className="text-neutral-400 mt-2"><i className="fa-solid fa-location-dot mr-1"></i>  {rooms.find((room: { id: any; }) => room.id === panel.resourceId) ? rooms.find((room: { id: any; }) => room.id === panel.roomId)?.title : "Loading..."}</p>
+                                    <p className="text-neutral-400 mt-2"><i className="fa-solid fa-location-dot mr-1"></i>  {rooms.find(room => room.id == panel.resourceId)?.roomName}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
+                    </>}
                     <br /><br />
                     <h1 className="text-3xl font-semibold">Full Schedule</h1>
                     <p className="text-neutral-400 mt-2">Explore the full schedule of panels for this weekend!</p>
                     {/* 4 Buttons Thu, Fri, Sat, Sun */}
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-5 mt-5 md:w-auto w-full">
+
+                    <input type="text" className="bg-neutral-900 border border-neutral-700 text-1xl font-bold text-center w-full rounded-full py-3 mt-5" placeholder="Search for Panels" onChange={(e: any) => setPanelSearch(e.target.value)} value={panelSearch} />
+                    
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-5 mt-5 md:w-auto w-full">
                         <button onClick={() => handleFilterChange("All")} className={`py-3 px-8 rounded-full text-neutral-100 font-semibold transition-colors ${filter === "All" ? "bg-cyan-800 hover:bg-cyan-900" : "bg-neutral-800 hover:bg-cyan-900"}`}>
                             All
                         </button>
-                        <button onClick={() => handleFilterChange("Thursday")} className={`py-3 px-8 rounded-full text-neutral-100 font-semibold transition-colors ${filter === "Thursday" ? "bg-cyan-800 hover:bg-cyan-900" : "bg-neutral-800 hover:bg-cyan-900"}`}>
+                        <button onClick={() => handleFilterChange("Thursday")} className={`hidden py-3 px-8 rounded-full text-neutral-100 font-semibold transition-colors ${filter === "Thursday" ? "bg-cyan-800 hover:bg-cyan-900" : "bg-neutral-800 hover:bg-cyan-900"}`}>
                             Thu
                         </button>
                         <button onClick={() => handleFilterChange("Friday")} className={`py-3 px-8 rounded-full text-neutral-100 font-semibold transition-colors ${filter === "Friday" ? "bg-cyan-800 hover:bg-cyan-900" : "bg-neutral-800 hover:bg-cyan-900"}`}>
@@ -251,16 +297,8 @@ export default function Home() {
 
 
                     {/* Foreach Panel Card */}
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
-                        {fullPanels.filter((panel: any) => {
-                            if (filter === "All") {
-                                return true;
-                            } else {
-                                // Filter by day
-                                const panelDay = moment(panel.start).format('dddd');
-                                return panelDay === filter;
-                            }
-                        }).map((panel: any, index) => {
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-5 w-full">
+                        {filterPanels.sort((a: any, b: any) => moment(a.start).diff(moment(b.start))).map((panel: any, index: any) => {
                             // Check if the panel is currently happening
                             const now = moment();
                             const panelStart = moment(panel.start);

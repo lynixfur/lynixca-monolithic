@@ -57,8 +57,8 @@ export default function Navbar() {
             </li>
             <li>
               <a href="/events" className="font-bold text-lg hover:text-cyan-600 transition-colors flex items-center text-neutral-400">
-                Events
-                <i className="fa fa-circle text-xs ml-2 text-cyan-700 animate-pulse" aria-hidden="true"></i>
+                Conventions
+                <i className="fa fa-circle text-xs ml-2 text-green-600 animate-pulse" aria-hidden="true"></i>
               </a>
             </li>
             <li>

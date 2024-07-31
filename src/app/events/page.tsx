@@ -6,7 +6,7 @@ export default function Home() {
         <>
             <main className="flex justify-center mt-10">
                 <div className="mb-16 flex flex-col items-start container">
-                    <h1 className="text-4xl font-bold">Events</h1>
+                    <h1 className="text-4xl font-bold">Conventions</h1>
                     <p className="text-neutral-400 mt-2 hidden"><i className="fa-solid fa-exclamation-triangle mr-1"></i> This page is currently unavailable because the necessary API module is missing.</p>
 
                     {/* Seach Box */}
@@ -23,8 +23,8 @@ export default function Home() {
                                     <p className="text-neutral-400 mt-2">August 1, 2024 · August 4, 2024</p>
                                     <p className="text-neutral-400 mt-2"><i className="fa-solid fa-location-dot mr-1"></i> Ottawa, ON</p>
                                     <p className="text-neutral-400 mt-2 font-semibold flex items-center space-x-4">
-                                        <i className="fa fa-circle text-xs mr-2 text-cyan-700 animate-pulse" aria-hidden="true"></i>
-                                        This event is starting soon!
+                                        <i className="fa fa-circle text-xs mr-2 text-green-600 animate-pulse" aria-hidden="true"></i>
+                                        This event is happening now!
                                     </p>
                                     <a href="/panels/canfur" className="mt-5 inline-block bg-cyan-800 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
                                         More Info
