@@ -154,7 +154,7 @@ export default function Home() {
     const currentPanelRef: any = useRef(null); // Ref for the current panel card
 
     useEffect(() => {
-        fetch("https://register.canfurence.ca/console/modules/schedule/ajax/scheduleEntries.ajax.php?shareToken=7EPeo2UztKgabKlxe0pqxvOufmuYdsV2PBGVsnjlTZ1M&start=2024-08-02T00%3A00%3A00-03%3A00&end=2024-08-03T00%3A00%3A00-03%3A00")
+        fetch("/events/canfur.json")
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
@@ -249,7 +249,7 @@ export default function Home() {
                         <i className="fa-solid fa-exclamation-triangle mr-2" /> This is not a official panel list, this is community built by Lynix!
                     </div>
                     <div className="font-semibold text-yellow-600 px-2 py-3">
-                        <i className="fa-solid fa-exclamation-triangle mr-2" /> Caution! Panels may be unsynced with the current ones from the Canfurence website, double check to make sure. The panels are currently pulled directly from the website each request.
+                        <i className="fa-solid fa-exclamation-triangle mr-2 animate-pulse" /> Caution! Panels may be unsynced with the current ones from the Canfurence website, double check to make sure.
                     </div>
                     <h1 className="text-6xl font-semibold mb-2">Canfurence 2024</h1>
                     <button className='mt-3 font-semibold text-cyan-600 mb-10' onClick={() => setShowHappeningNow(!showHappeningNow)}><i className="fa-solid fa-eye"></i> {showHappeningNow ? 'Hide' : 'Show'} Happening Now</button>
