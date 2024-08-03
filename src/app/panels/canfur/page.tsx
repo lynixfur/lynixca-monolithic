@@ -26,7 +26,7 @@ export default function Home() {
     const [ws, setWs]: any = useState(null);
   
     useEffect(() => {
-      const websocket = new WebSocket('ws://localhost:8080');
+      const websocket = new WebSocket('wss://lynix.ca/ws');
   
       websocket.onmessage = (event) => {
         const data = JSON.parse(event.data);
