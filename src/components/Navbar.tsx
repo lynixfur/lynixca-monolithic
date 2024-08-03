@@ -30,9 +30,9 @@ export default function Navbar() {
             </button>
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/projects" className="font-semibold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Blog</a>
+            <a href="/projects" className="font-semibold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Projects</a>
             <a href="/fursona" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Fursona</a>
-            <a href="/events" className="font-bold text-xl hover:text-cyan-600 transition-colors flex items-center text-neutral-300 hidden">Conventions
+            <a href="/events" className="font-bold text-xl hover:text-cyan-600 transition-colors flex items-center text-neutral-300">Conventions
               <i className="fa fa-circle text-xs ml-2 text-green-600 animate-pulse" aria-hidden="true"></i>
             </a>
             <a href="/about" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">About</a>

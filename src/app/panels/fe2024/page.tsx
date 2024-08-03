@@ -72,8 +72,7 @@ export default function Home() {
                     <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-0 my-10">
                         <i className="fa-solid fa-exclamation-triangle mr-2" /> This is not an official convention application, this is just to make it easier to manage the panels during the event!
                     </div>
-                    <h1 className="text-4xl font-semibold">Lynix Convention Manager</h1>
-                    <h3 className="text-neutral-200 mt-2 text-2xl mt-5">Furnal Equinox 2024</h3>
+                    <h1 className="text-4xl font-semibold">Lynix Convention Manager - Furnal Equinox 2024</h1>
                     <p className="text-neutral-400 mt-2">LCM lets you organize meetups at the conventions you are attending, and lets you keep track of your schedule.</p>
                     {/* Foreach Panel Card */}
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
@@ -88,7 +87,7 @@ export default function Home() {
                         ))}
                     </div>
                     <br /><br />
-                    <h1 className="text-3xl font-semibold">Full Schedule</h1>
+                    <h1 className="text-3xl font-semibold mt-10">Full Schedule</h1>
                     <p className="text-neutral-400 mt-2">Explore the full schedule of panels for this weekend!</p>
                     {/* 4 Buttons Thu, Fri, Sat, Sun */}
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-5 mt-5 md:w-auto w-full">

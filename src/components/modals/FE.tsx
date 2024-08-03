@@ -27,9 +27,9 @@ export default function FE() {
                 {/* Modal body */}
                 <div className="p-4 md:p-5 space-y-4">
                 <p className="text-base leading-relaxed text-neutral-300">
-                    Loving Furnal Equinox so far? Thanks for hanging out and chatting earlier. 😊<br/><br/>
-                    I&apos;m a Canadian fur from Moncton, NB with a passion for cybersecurity and all things techy hence my NFC paws. I am also a volunteer at Furality Inc. as a backend developper!
-                    <br/><br/><i>Awoooooooo! You are the <span className="text-cyan-600 font-bold">0th</span> person that visited my website during FE!</i>
+                    Loving Canfurence so far? Thanks for hanging out and chatting earlier. 😊<br/><br/>
+                    I&apos;m a Canadian fur from Toronto, ON with a passion for cybersecurity and all things techy hence my NFC paws. I am also a volunteer at Furality Inc. as a backend developper!
+                    <br/><br/><i>Awoooooooo!</i>
                 </p>
                 <p style={{"fontSize": "12px", "marginTop": "2px"}}>Badge Scanned: {nfc_tag}</p>
                 </div>
