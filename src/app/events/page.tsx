@@ -26,10 +26,10 @@ export default function Home() {
                                         <i className="fa fa-circle text-xs mr-2 text-cyan-700 animate-pulse" aria-hidden="true"></i>
                                         This event is starting soon!
                                     </p>
-                                    <a href="/event/fe2024" className="mt-5 inline-block bg-cyan-800 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
+                                    <a href="/panels/canfur" className="mt-5 inline-block bg-cyan-800 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
                                         More Info
                                     </a>
-                                    <a href="/event/fe2024" className="ml-3 mt-5 inline-block bg-neutral-900 border border-neutral-600 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
+                                    <a href="/" className="ml-3 mt-5 inline-block bg-neutral-900 border border-neutral-600 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
                                         0 Boops
                                     </a>
                                 </div>
@@ -49,7 +49,7 @@ export default function Home() {
                                     <a href="/" className="mt-5 inline-block bg-cyan-800 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
                                         More Info
                                     </a>
-                                    <a href="/event/fe2024" className="ml-3 mt-5 inline-block bg-neutral-900 border border-neutral-600 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
+                                    <a href="/" className="ml-3 mt-5 inline-block bg-neutral-900 border border-neutral-600 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
                                         4713 Headpats
                                     </a>
                                 </div>
@@ -66,10 +66,10 @@ export default function Home() {
                                         <i className="fa fa-circle text-xs mr-2 text-red-700" aria-hidden="true"></i>
                                         This event has ended.
                                     </p>
-                                    <a href="/event/fe2024" className="mt-5 inline-block bg-cyan-800 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
+                                    <a href="/panels/fe2024" className="mt-5 inline-block bg-cyan-800 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
                                         More Info
                                     </a>
-                                    <a href="/event/fe2024" className="ml-3 mt-5 inline-block bg-neutral-900 border border-neutral-600 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
+                                    <a href="/" className="ml-3 mt-5 inline-block bg-neutral-900 border border-neutral-600 py-2 px-5 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
                                         37 Boops
                                     </a>
                                 </div>
