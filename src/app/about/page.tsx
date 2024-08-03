@@ -25,7 +25,7 @@ export default function Home() {
                         </div>
                         <div className="w-full md:px-0 px-8 flex flex-col">
                             <p className="text-lg text-justify leading-8 text-neutral-400">
-                                <span className="text-4xl mb-2 font-bold">Hey! I'm Lynix,</span><br /><br /> a cybersecurity student from the Maritimes of Canada with a passion for coding and tech. I'm also a proud member of the furry community, an outdoor lover, and a total VR enthusiast! Besides that, I'm a lifelong learner who thrives on new challenges. I love experimenting with Open Source projects and even building my own Internet of Things (IoT) hardware. Speaking of which, I'm into writing embedded firmware for fun projects! For instance, I created a Fursuit API and some IoT-enabled badges that are currently being beta tested at Furnal Equinox 2024 in Toronto.
+                                <span className="text-4xl mb-2 font-bold">Hey! I&apos;m Lynix,</span><br /><br /> a cybersecurity student from the Maritimes of Canada with a passion for coding and tech. I&apos;m also a proud member of the furry community, an outdoor lover, and a total VR enthusiast! Besides that, I&apos;m a lifelong learner who thrives on new challenges. I love experimenting with Open Source projects and even building my own Internet of Things (IoT) hardware. Speaking of which, I&apos;m into writing embedded firmware for fun projects! For instance, I created a Fursuit API and some IoT-enabled badges that are currently being beta tested at Furnal Equinox 2024 in Toronto.
                             </p>
                         </div>
                     </div>

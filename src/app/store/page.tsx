@@ -120,7 +120,7 @@ export default function Store() {
                             <div className="p-5">
                                 <img src="/lynix2.png" className="w-40 rounded-md object-cover object-top  mb-10 opacity-0" />
                                 <h2 className="text-xl font-semibold">3D Printed Commission</h2>
-                                <p className="text-neutral-400 mt-2 h-[120px]">Get yourself a 3D printed commission of your fursona or anything you'd like!</p>
+                                <p className="text-neutral-400 mt-2 h-[120px]">Get yourself a 3D printed commission of your fursona or anything you&apos;d like!</p>
                                 <div className="flex items-center justify-between mt-5">
                                     <p className="text-cyan-600 text-2xl font-bold">Starting at $7.50 CAD</p>
                                 </div>

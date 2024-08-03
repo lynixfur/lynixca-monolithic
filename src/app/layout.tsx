@@ -31,7 +31,7 @@ export default function RootLayout({
           {children}
           </main>
 
-          <script src="/stars.js"></script>
+          <script src="/stars.js" async></script>
       </body>
     </html>
   );
