@@ -280,7 +280,7 @@ export default function Home() {
                         <i className="fa-solid fa-exclamation-triangle mr-2 animate-pulse" /> Caution! Panels may be unsynced with the current ones from the Canfurence website, double check to make sure.
                     </div>
                     <div className="font-semibold text-cyan-600 px-2 py-3">
-                        <i className="fa-solid fa-users mr-2" /> {connectedClients} Floofs here!
+                        <i className="fa-solid fa-users mr-2" /> {connectedClients} Floofs here right now!
                     </div>
                     <h1 className="text-6xl font-semibold mb-2 mt-5">Canfurence 2024 <i className="fa-solid fa-refresh mr-2 animate-pulse" /></h1>
                     <button className='mt-3 font-semibold text-cyan-600 mb-10' onClick={() => setShowHappeningNow(!showHappeningNow)}><i className="fa-solid fa-eye"></i> {showHappeningNow ? 'Hide' : 'Show'} Happening Now</button>
