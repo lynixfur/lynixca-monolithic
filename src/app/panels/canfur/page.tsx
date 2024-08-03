@@ -279,10 +279,10 @@ export default function Home() {
                     <div className="font-semibold text-yellow-600 px-2 py-3">
                         <i className="fa-solid fa-exclamation-triangle mr-2 animate-pulse" /> Caution! Panels may be unsynced with the current ones from the Canfurence website, double check to make sure.
                     </div>
-                    <div className="font-semibold text-cyan-600 px-2 py-3">
+                    <div className="font-semibold text-green-600 px-2 py-3">
                         <i className="fa-solid fa-users mr-2" /> {connectedClients} Floofs here right now!
                     </div>
-                    <h1 className="text-6xl font-semibold mb-2 mt-5">Canfurence 2024 <i className="fa-solid fa-refresh mr-2 animate-pulse" /></h1>
+                    <h1 className="text-6xl font-semibold mb-2 mt-5">Canfurence 2024 <i className="fa-solid fa-refresh mr-2 animate-pulse hidden" /></h1>
                     <button className='mt-3 font-semibold text-cyan-600 mb-10' onClick={() => setShowHappeningNow(!showHappeningNow)}><i className="fa-solid fa-eye"></i> {showHappeningNow ? 'Hide' : 'Show'} Happening Now</button>
 
                     <p className="text-neutral-400 mt-2 mb-10 hidden">LCM lets you organize meetups at the conventions you are attending, and lets you keep track of your schedule.</p>
@@ -292,7 +292,7 @@ export default function Home() {
                     <p className="text-neutral-400 mt-2 mb-10">Nothing is happening right now! Come back later!</p>
                     
                     {/* Foreach Panel Card */}
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-10">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-10 w-full">
                         {currentPanels.sort((a: any, b: any) => moment(a.start).diff(moment(b.start))).map((panel: any, index) => (
                             <div key={index} className="border border-cyan-700 shadow-lg shadow-cyan-700/50 bg-neutral-800 rounded-xl relative overflow-hidden flex items-stretch border border-neutral-700 mt-5 w-full">
                                 <div className="p-5">
