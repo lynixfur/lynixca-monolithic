@@ -21,6 +21,7 @@ export default function Home() {
     const [panelSearch, setPanelSearch] = useState('');
     const [filterPanels, setFilterPanels] = useState([]);
     const [showHappeningNow, setShowHappeningNow] = useState(true);
+    const [requestCount, setRequestCount] = useState(0);
     const rooms = [
         {
             "id": 1,
@@ -176,6 +177,15 @@ export default function Home() {
                 // Set Rooms
                 //setRooms(data.rooms);
             });
+
+            fetch("/api/canfur/attendees")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+
+                setRequestCount(data.number);
+
+            });
     }, []);
 
     useEffect(() => {
@@ -245,13 +255,16 @@ export default function Home() {
         <>
             <main className="flex justify-center mt-10 md:px-10 px-3">
                 <div className="mb-16 flex flex-col items-start container">
-                    <div className="font-semibold text-red-600 px-2 py-3">
+                    <div className="font-semibold text-red-600 px-2 py-3 hidden">
                         <i className="fa-solid fa-exclamation-triangle mr-2" /> This is not a official panel list, this is community built by Lynix!
                     </div>
                     <div className="font-semibold text-yellow-600 px-2 py-3">
                         <i className="fa-solid fa-exclamation-triangle mr-2 animate-pulse" /> Caution! Panels may be unsynced with the current ones from the Canfurence website, double check to make sure.
                     </div>
-                    <h1 className="text-6xl font-semibold mb-2">Canfurence 2024</h1>
+                    <div className="font-semibold text-cyan-600 px-2 py-3">
+                        <i className="fa-solid fa-users mr-2" /> {requestCount} Floffy Requests Made!!
+                    </div>
+                    <h1 className="text-6xl font-semibold mb-2 mt-5">Canfurence 2024 <i className="fa-solid fa-refresh mr-2 animate-pulse" /></h1>
                     <button className='mt-3 font-semibold text-cyan-600 mb-10' onClick={() => setShowHappeningNow(!showHappeningNow)}><i className="fa-solid fa-eye"></i> {showHappeningNow ? 'Hide' : 'Show'} Happening Now</button>
 
                     <p className="text-neutral-400 mt-2 mb-10 hidden">LCM lets you organize meetups at the conventions you are attending, and lets you keep track of your schedule.</p>
