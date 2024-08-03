@@ -21,7 +21,27 @@ export default function Home() {
     const [panelSearch, setPanelSearch] = useState('');
     const [filterPanels, setFilterPanels] = useState([]);
     const [showHappeningNow, setShowHappeningNow] = useState(true);
-    const [requestCount, setRequestCount] = useState(0);
+
+    const [connectedClients, setConnectedClients] = useState(0);
+    const [ws, setWs]: any = useState(null);
+  
+    useEffect(() => {
+      const websocket = new WebSocket('ws://localhost:8080');
+  
+      websocket.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        if (data.connectedClients !== undefined) {
+          setConnectedClients(data.connectedClients);
+        }
+      };
+  
+      setWs(websocket);
+  
+      return () => {
+        websocket.close();
+      };
+    }, []);
+
     const rooms = [
         {
             "id": 1,
@@ -183,8 +203,6 @@ export default function Home() {
             .then((data) => {
                 console.log(data);
 
-                setRequestCount(data.number);
-
             });
     }, []);
 
@@ -262,7 +280,7 @@ export default function Home() {
                         <i className="fa-solid fa-exclamation-triangle mr-2 animate-pulse" /> Caution! Panels may be unsynced with the current ones from the Canfurence website, double check to make sure.
                     </div>
                     <div className="font-semibold text-cyan-600 px-2 py-3">
-                        <i className="fa-solid fa-users mr-2" /> {requestCount} Floffy Requests Made!!
+                        <i className="fa-solid fa-users mr-2" /> {connectedClients} Floofs here!
                     </div>
                     <h1 className="text-6xl font-semibold mb-2 mt-5">Canfurence 2024 <i className="fa-solid fa-refresh mr-2 animate-pulse" /></h1>
                     <button className='mt-3 font-semibold text-cyan-600 mb-10' onClick={() => setShowHappeningNow(!showHappeningNow)}><i className="fa-solid fa-eye"></i> {showHappeningNow ? 'Hide' : 'Show'} Happening Now</button>
