@@ -282,7 +282,7 @@ export default function Home() {
                     <div className="font-semibold text-green-600 px-2 py-3">
                         <i className="fa-solid fa-users mr-2" /> {connectedClients} Floofs here right now!
                     </div>
-                    <h1 className="text-6xl font-semibold mb-2 mt-5">Canfurence 2024 <i className="fa-solid fa-refresh mr-2 animate-pulse hidden" /></h1>
+                    <h1 className="text-6xl font-semibold mb-2 mt-5">Canfurence 2024</h1>
                     <button className='mt-3 font-semibold text-cyan-600 mb-10' onClick={() => setShowHappeningNow(!showHappeningNow)}><i className="fa-solid fa-eye"></i> {showHappeningNow ? 'Hide' : 'Show'} Happening Now</button>
 
                     <p className="text-neutral-400 mt-2 mb-10 hidden">LCM lets you organize meetups at the conventions you are attending, and lets you keep track of your schedule.</p>
