@@ -340,11 +340,17 @@ export default function Home() {
                             const isCurrentPanel = now.isBetween(panelStart, panelEnd);
 
                             return (
-                                <div key={index} ref={isCurrentPanel ? currentPanelRef : null} className={`bg-neutral-800 rounded-xl relative overflow-hidden flex items-stretch border mt-5 w-full ${isCurrentPanel ? 'border-cyan-700 shadow-lg shadow-cyan-700/50' : 'border-neutral-700'}`}>
-                                    <div className="p-5">
+<div
+  key={index}
+  ref={isCurrentPanel ? currentPanelRef : null}
+  className={`bg-neutral-800 rounded-xl relative overflow-hidden flex items-stretch border mt-5 w-full 
+    ${panel.title === 'Fursuit Walkies' ? 'border-red-700 shadow-lg shadow-red-700/50 animate-glow' : (isCurrentPanel ? 'border-cyan-700 shadow-lg shadow-cyan-700/50' : 'border-neutral-700')}
+  `}
+><div className="p-5">
                                         <h2 className="text-xl font-semibold">{panel.title}</h2>
                                         <p className="text-neutral-400 mt-2">{moment(panel.start).format('dddd, h:mm:ss a')} - {moment(panel.end).format('h:mm:ss a')}</p>
                                         <p className="text-neutral-400 mt-2"><i className="fa-solid fa-location-dot mr-1"></i>  {rooms.find(room => room.id == panel.resourceId)?.roomName}</p>
+                                        {panel.title == 'Fursuit Walkies' &&  <h2 className="text-xl text-red-600 mt-3 font-bold">CANCELLED</h2>}
                                     </div>
                                 </div>
                             );
