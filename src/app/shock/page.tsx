@@ -75,7 +75,7 @@ export default function ShockClient({ params }: { params: { id: string } }) {
                     {/* Main Card - Controls */}
                     <div className="bg-neutral-900 rounded-xl relative overflow-hidden flex flex-col items-center justify-center border border-neutral-700 w-1/3 mt-10 min-h-[200px]">
                         <h1 className="text-4xl font-semibold text-neutral-500 text-center mt-5">Lynix</h1>
-                        <p className="text-center mt-3 text-neutral-300 px-5"></p><br />
+                        <p className="text-center mt-3 text-neutral-300 px-5">Connected Freakhound Devices: 23</p><br />
                         <input type="text" className="bg-neutral-800 text-4xl font-bold text-center w-full py-5" placeholder="0%" />
                         <input type="text" className="bg-neutral-800 text-2xl font-bold text-center w-full py-3 mt-2" placeholder="0 Seconds" value={shockDuration} onChange={(e) => setShockDuration(e.target.value)} />
 

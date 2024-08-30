@@ -19,7 +19,7 @@ export default function Navbar() {
       <header className="py-5 px-7 md:px-24 bg-neutral-950 border-b border-neutral-950">
         <nav className="flex items-center justify-between">
           <a href="/" className="font-semibold text-lg flex items-center mr-10">
-            <img src="/lynix.png" alt="lynix" className="h-[50px] w-[50px] mr-3 -mt-1.5" />
+            <img src="/lynix-blue.png" alt="lynix" className="w-[50px] mr-3 -mt-1.5" />
             <span className="text-cyan-600 font-bold italic text-3xl  hidden">Lynix</span>  
           </a>
           <div className="md:hidden">
@@ -33,7 +33,7 @@ export default function Navbar() {
             <a href="/projects" className="font-semibold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Projects</a>
             <a href="/fursona" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Fursona</a>
             <a href="/events" className="font-bold text-xl hover:text-cyan-600 transition-colors flex items-center text-neutral-300">Conventions
-              <i className="fa fa-circle text-xs ml-2 text-green-600 animate-pulse" aria-hidden="true"></i>
+              {/*<i className="fa fa-circle text-xs ml-2 text-green-600 hidden" aria-hidden="true"></i>*/}
             </a>
             <a href="/about" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">About</a>
             <a href="/contact" className="font-bold text-xl hover:text-cyan-600 transition-colors text-neutral-300">Contact</a>
@@ -58,7 +58,7 @@ export default function Navbar() {
             <li>
               <a href="/events" className="font-bold text-lg hover:text-cyan-600 transition-colors flex items-center text-neutral-400">
                 Conventions
-                <i className="fa fa-circle text-xs ml-2 text-green-600 animate-pulse" aria-hidden="true"></i>
+                {/*<i className="fa fa-circle text-xs ml-2 text-green-600 animate-pulse hidden" aria-hidden="true"></i>*/}
               </a>
             </li>
             <li>
