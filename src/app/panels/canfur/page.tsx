@@ -21,6 +21,27 @@ export default function Home() {
     const [panelSearch, setPanelSearch] = useState('');
     const [filterPanels, setFilterPanels] = useState([]);
     const [showHappeningNow, setShowHappeningNow] = useState(true);
+
+    const [connectedClients, setConnectedClients] = useState(0);
+    const [ws, setWs]: any = useState(null);
+  
+    useEffect(() => {
+      const websocket = new WebSocket('wss://lynix.ca/ws');
+  
+      websocket.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        if (data.connectedClients !== undefined) {
+          setConnectedClients(data.connectedClients);
+        }
+      };
+  
+      setWs(websocket);
+  
+      return () => {
+        websocket.close();
+      };
+    }, []);
+
     const rooms = [
         {
             "id": 1,
@@ -176,6 +197,13 @@ export default function Home() {
                 // Set Rooms
                 //setRooms(data.rooms);
             });
+
+            fetch("/api/canfur/attendees")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+
+            });
     }, []);
 
     useEffect(() => {
@@ -245,10 +273,16 @@ export default function Home() {
         <>
             <main className="flex justify-center mt-10 md:px-10 px-3">
                 <div className="mb-16 flex flex-col items-start container">
-                    <div className="font-semibold text-red-600 px-2 py-3">
+                    <div className="font-semibold text-red-600 px-2 py-3 hidden">
                         <i className="fa-solid fa-exclamation-triangle mr-2" /> This is not a official panel list, this is community built by Lynix!
                     </div>
-                    <h1 className="text-6xl font-semibold mb-2">Canfurence 2024</h1>
+                    <div className="font-semibold text-yellow-600 px-2 py-3">
+                        <i className="fa-solid fa-exclamation-triangle mr-2 animate-pulse" /> Caution! Panels may be unsynced with the current ones from the Canfurence website, double check to make sure.
+                    </div>
+                    <div className="font-semibold text-green-600 px-2 py-3">
+                        <i className="fa-solid fa-users mr-2" /> 447 Floofs used this panel page!
+                    </div>
+                    <h1 className="text-6xl font-semibold mb-2 mt-5">Canfurence 2024</h1>
                     <button className='mt-3 font-semibold text-cyan-600 mb-10' onClick={() => setShowHappeningNow(!showHappeningNow)}><i className="fa-solid fa-eye"></i> {showHappeningNow ? 'Hide' : 'Show'} Happening Now</button>
 
                     <p className="text-neutral-400 mt-2 mb-10 hidden">LCM lets you organize meetups at the conventions you are attending, and lets you keep track of your schedule.</p>
@@ -258,7 +292,7 @@ export default function Home() {
                     <p className="text-neutral-400 mt-2 mb-10">Nothing is happening right now! Come back later!</p>
                     
                     {/* Foreach Panel Card */}
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-10">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-10 w-full">
                         {currentPanels.sort((a: any, b: any) => moment(a.start).diff(moment(b.start))).map((panel: any, index) => (
                             <div key={index} className="border border-cyan-700 shadow-lg shadow-cyan-700/50 bg-neutral-800 rounded-xl relative overflow-hidden flex items-stretch border border-neutral-700 mt-5 w-full">
                                 <div className="p-5">
@@ -306,11 +340,17 @@ export default function Home() {
                             const isCurrentPanel = now.isBetween(panelStart, panelEnd);
 
                             return (
-                                <div key={index} ref={isCurrentPanel ? currentPanelRef : null} className={`bg-neutral-800 rounded-xl relative overflow-hidden flex items-stretch border mt-5 w-full ${isCurrentPanel ? 'border-cyan-700 shadow-lg shadow-cyan-700/50' : 'border-neutral-700'}`}>
-                                    <div className="p-5">
+<div
+  key={index}
+  ref={isCurrentPanel ? currentPanelRef : null}
+  className={`bg-neutral-800 rounded-xl relative overflow-hidden flex items-stretch border mt-5 w-full 
+    ${panel.title === 'Fursuit Walkies' || panel.title == 'The Lyrebird’s Cage' ? 'border-red-700 shadow-lg shadow-red-700/50 animate-glow' : (isCurrentPanel ? 'border-cyan-700 shadow-lg shadow-cyan-700/50' : 'border-neutral-700')}
+  `}
+><div className="p-5">
                                         <h2 className="text-xl font-semibold">{panel.title}</h2>
                                         <p className="text-neutral-400 mt-2">{moment(panel.start).format('dddd, h:mm:ss a')} - {moment(panel.end).format('h:mm:ss a')}</p>
                                         <p className="text-neutral-400 mt-2"><i className="fa-solid fa-location-dot mr-1"></i>  {rooms.find(room => room.id == panel.resourceId)?.roomName}</p>
+                                        {panel.title == 'Fursuit Walkies' || panel.title == 'The Lyrebird’s Cage' &&  <h2 className="text-xl text-red-600 mt-3 font-bold">CANCELLED</h2>}
                                     </div>
                                 </div>
                             );
