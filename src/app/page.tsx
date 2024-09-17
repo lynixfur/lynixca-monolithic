@@ -1,14 +1,10 @@
 import Image from "next/image";
-import Navbar from "../components/Navbar";
-import SmallAlert from "@/components/SmallAlert";
+import Navbar from "../components/nav/NavbarHome";
 import FE from "@/components/modals/FE";
 import { useSearchParams } from "next/navigation";
 
 
 import Welcome from "@/components/pages/home/Welcome";
-import VirtualReality from "@/components/pages/home/VirtualReality";
-import WhoAmI from "@/components/pages/home/WhoAmI";
-
 
 export default function Home() {
   return (
@@ -19,7 +15,7 @@ export default function Home() {
 
 
         <Welcome />
-        <div className="py-4 text-sm md:px-24">
+        <div className="py-4 text-sm md:px-24 hidden">
           <p>Copyright {new Date().getFullYear()} Lynix. All rights reserved.</p>
         </div>
       </main>

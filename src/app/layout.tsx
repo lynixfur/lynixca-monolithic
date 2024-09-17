@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import SmallAlert from "@/components/SmallAlert";
+
+import Navbar from "@/components/nav/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,22 +16,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <head>
         <link rel="stylesheet" href="/fontawesome/css/all.min.css"></link>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+          rel="stylesheet"
+        ></link>
       </head>
       <body className={inter.className}>
+        <main className="min-h-screen flex flex-col">
           <Navbar />
-          <SmallAlert />
-          <main className="min-h-screen">
           {children}
-          </main>
-
-          <script src="/stars.js" async></script>
+        </main>
       </body>
     </html>
   );

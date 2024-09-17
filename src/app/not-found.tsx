@@ -1,21 +1,33 @@
 import Image from "next/image";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/nav/NavbarHome";
 
 export default function NotFound() {
   return (
     <>
-      <main className="flex justify-center mt-10">
-        <div className="container">
-          <h1 className="text-8xl font-bold text-cyan-700">404</h1>
-          <h2 className="text-3xl mt-2">Page Not Found</h2>
-          <p className="mt-5 text-neutral-400">Sorry, the page you are looking for is not available.</p>
-
-          {/* Go home button */}
-          <a href="/" className="mt-10 inline-block bg-cyan-800 py-3 px-8 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
-            Return Home
-          </a>
+      <main className="relative isolate h-screen">
+        <img
+          src="/bg/_DSC3167.webp"
+          alt=""
+          className="absolute inset-0 -z-10 h-full w-full object-cover object-top"
+        />
+        <div className="w-full h-full" style={{ background: "rgba(0, 0, 0, 0.7)", backdropFilter: "blur(20px)", boxShadow: "0 8px 30px rgba(0, 0, 0, 0.2)" }}>
+          <div className="mx-auto max-w-7xl px-6 py-32 text-center sm:py-40 lg:px-8">
+            <p className="text-base font-semibold leading-8 text-white hidden">404</p><br/>
+            <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">
+              Page not found
+            </h1>
+            <p className="mt-4 text-base text-white/70 sm:mt-6">
+              It seems the page you’re looking for has been moved or no longer exists.
+            </p>
+            <div className="mt-10 flex justify-center">
+              <a href="#" className="text-sm font-semibold leading-7 flex items-center bg-[#67d9cc] text-neutral-950 rounded-full px-3">
+                <i className="fa-solid fa-house text-xs mr-1"></i> Back to home
+              </a>
+            </div>
+          </div>
         </div>
       </main>
+
     </>
   );
 }
