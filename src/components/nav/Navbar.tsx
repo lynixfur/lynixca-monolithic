@@ -19,7 +19,6 @@ export default function Navbar() {
 
   const pathname = usePathname();
 
-  if(pathname != "/" && pathname != "/login") {
     return (
       <header className="py-5 px-7 md:px-24 bg-[#01336c] border-[#51a9b0] bg-opacity-0">
         <nav className="flex items-center justify-between">
@@ -77,5 +76,4 @@ export default function Navbar() {
         </div>
       </header>
     );
-  }
 }

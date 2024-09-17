@@ -46,7 +46,7 @@ export default function Welcome() {
                 <p className="pt-4 text-lg text-white text-left px-1 md:px-0 hidden md:block">
                     As a Canadian developer, cybersecurity instructor, and furry enthusiast, I am passionate about leveraging<br /> IT to create positive change and make the world a better place for everyone.
                 </p>
-                <p className="text-xs italic mt-1">The fursuit head is not Lynix, it's Outlaw_Coyote.</p>
+                <p className="text-xs italic mt-1">The fursuit head is not Lynix, it&apos;s Outlaw_Coyote.</p>
                 <div className="hidden md:flex space-x-10 mt-5">
                     <a href="https://discord.com" aria-label="Discord">
                         <i className="fa-brands fa-discord text-4xl text-neutral-100" />
