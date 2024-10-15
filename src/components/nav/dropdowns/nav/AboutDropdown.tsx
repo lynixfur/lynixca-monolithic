@@ -8,7 +8,7 @@ const AboutDropdown = () => {
       <div>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="font-bold text-xl text-neutral-100 flex items-center"
+          className="font-bold text-xl text-neutral-100 flex items-center hover:text-[#aa72d5] transition-colors"
         >
           About
           <svg
@@ -45,7 +45,7 @@ const AboutDropdown = () => {
             role="menuitem"
             tabIndex={-1}
           >
-            About Fursona
+            My Fursona
           </a>
           <a
             href="#about-me"

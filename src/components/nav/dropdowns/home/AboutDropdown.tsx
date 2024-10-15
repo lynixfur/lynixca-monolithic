@@ -45,7 +45,7 @@ const AboutDropdown = () => {
             role="menuitem"
             tabIndex={-1}
           >
-            About Fursona
+            My Fursona
           </a>
           <a
             href="#about-me"

@@ -19,11 +19,12 @@ export default function Navbar() {
 
   const pathname = usePathname();
 
+  if(pathname != "/" && pathname != "/login") {
     return (
       <header className="py-5 px-7 md:px-24 bg-[#01336c] border-[#51a9b0] bg-opacity-0">
         <nav className="flex items-center justify-between">
           <a href="/" className="font-semibold text-lg flex items-center mr-10">
-            <img src="/lynix_bingo.png" alt="lynix" className="w-[40px] mr-3" />
+            <img src="/test3.png" alt="lynix" className="w-[50px] mr-3" />
           </a>
           <div className="md:hidden">
             <button onClick={toggleMenu} className="text-neutral-950 focus:outline-none">
@@ -33,15 +34,15 @@ export default function Navbar() {
             </button>
           </div>
           <div className="hidden md:flex items-center space-x-8 my-3">
-            <a href="/blog" className="font-bold text-xl  transition-colors text-neutral-100">Blog</a>
-            <ProjectsDropdown />
-            <a href="/fursona" className="font-bold text-xl transition-colors text-white hidden">Fursona</a>
-            <a href="/events" className="font-bold text-xl transition-colors flex items-center text-neutral-100">Events
-              {/*<i className="fa fa-circle text-xs ml-2 text-green-600 hidden" aria-hidden="true"></i>*/}
-            </a>
+              <a href="/blog" className="font-bold text-xl  transition-colors hover:text-[#aa72d5] text-neutral-100">Blog</a>
+              <a href="/projects" className="font-bold text-xl  transition-colors hover:text-[#aa72d5] text-neutral-100 hidden">Projects</a>
+              <a href="/events" className="font-bold text-xl transition-colors hover:text-[#aa72d5] flex items-center text-neutral-100">Events
+                {/*<i className="fa fa-circle text-xs ml-2 text-green-600 hidden" aria-hidden="true"></i>*/}
+              </a>
+              <a href="/fursona" className="font-bold text-xl transition-colors hover:text-[#aa72d5] text-white">Fursona</a>
+              <a href="/socials" className="font-bold text-xl transition-colors hover:text-[#aa72d5] text-white">Socials</a>
 
-            <GalleryDropdown />
-            <AboutDropdown />
+              <GalleryDropdown />
 
             {/* Profile Picture */}
             {/* New Account Feature */}
@@ -76,4 +77,5 @@ export default function Navbar() {
         </div>
       </header>
     );
+  }
 }

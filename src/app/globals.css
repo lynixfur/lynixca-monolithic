@@ -7,40 +7,38 @@
 
 body {
   @apply bg-neutral-950 text-neutral-100;
-  overflow: hidden;
 }
 
 
 /* Box Toronto */
 .background-div {
-  background-image: url('/bg/_DSC3167.webp');
+  background-image: url('/tobee-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; /* Default position for larger screens */
 }
 
-/* Small devices (up to 600px wide) */
+/* Small devices (up to 600px wide) 
 @media (max-width: 600px) {
   .background-div {
-    background-position: 50% 50%; /* Default center position */
-    background-position-x: calc(30% - 350px); /* Shift 350px to the left, but relative to screen size */
+    background-position: 50% 50%; /* Default center position 
+    background-position-x: calc(30% - 350px); /* Shift 350px to the left, but relative to screen size 
   }
 }
 
-/* Medium devices (600px to 992px wide) */
+/* Medium devices (600px to 992px wide) 
 @media (min-width: 601px) and (max-width: 992px) {
   .background-div {
-    background-position: center center; /* Keep it centered for medium screens */
+    background-position: center center; /* Keep it centered for medium screens 
   }
 }
 
-/* Large devices (992px and above) */
+/* Large devices (992px and above) 
 @media (min-width: 993px) {
   .background-div {
-    background-position: center center; /* Keep it centered for large screens */
+    background-position: center center; /* Keep it centered for large screens 
   }
-}
-
+}*/
  
 .fancy {
   background: linear-gradient(90deg, #0e82ff 0%, #63e0ff 100%); /* Original gradient */
@@ -62,23 +60,6 @@ body {
     background-position: 100% 50%;
   }
 }
-
-.permanent-marker-regular {
-  font-family: "Permanent Marker";
-}
-
-.leaflet-container .leaflet-control-attribution {
-  background: rgb(23 23 23 / 93%) !important;
-  @apply text-neutral-400;
-}
-
-.leaflet-bar a {
-  background: #252424 !important;
-  color: rgb(163 163 163 / 1) !important;
-  border: 0.5px solid rgb(163 163 163 / 1) !important;
-  margin-top: 5px;
-}
-
 
 .divider {
   @apply bg-neutral-950;
@@ -158,5 +139,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-[#67d9cc];
+  @apply bg-[#a400ff];
 }

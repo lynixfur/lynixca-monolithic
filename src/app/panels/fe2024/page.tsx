@@ -2,20 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation'
-import Map from '@/components/Map';
 
-
-// START: Preserve spaces to avoid auto-sorting
-//import "leaflet/dist/leaflet.css";
-
-//import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
-
-//import "leaflet-defaulticon-compatibility";
 
 import moment from "moment";
-
-// END: Preserve spaces to avoid auto-sorting
-//import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import dynamic from 'next/dynamic';
 
 export default function Home() {
 
@@ -28,7 +18,7 @@ export default function Home() {
     const currentPanelRef: any = useRef(null); // Ref for the current panel card
 
     useEffect(() => {
-        fetch("/events/fe2024/schedule.json")
+        fetch("/events/fe2024/schedule_fri.json")
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
@@ -77,90 +67,13 @@ export default function Home() {
 
     return (
         <>
-            <main className="">
-                <div className="mb-16 flex flex-col items-start">
-                    {isDash ? (<><h1 className="text-4xl font-semibold">Lynix Convention Manager</h1>
-                        <h3 className="text-neutral-200 mt-2 text-2xl mt-5">Furnal Equinox 2024</h3>
-                        <p className="text-neutral-400 mt-2">LCM lets you organize meetups at the conventions you are attending, and lets you keep track of your schedule.</p>
-
-                        <br /><br />
-                        <h1 className="text-3xl font-semibold">Live Location</h1>
-                        {/*<MapContainer
-                            className="mt-5 w-full h-[300px]"
-                            preferCanvas={true}
-                            center={[51.505, -0.09]}
-                            zoom={11}
-                            scrollWheelZoom={true}
-                        >
-                            <TileLayer
-                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            />
-                            <Marker position={[51.505, -0.09]}>
-                                <Popup>
-                                    Lynix&apos;s current location at FE 2024
-                                </Popup>
-                            </Marker>
-    </MapContainer>*/}
-                        <p className="text-red-400 mt-2"><i className="fa-solid fa-triangle-exclamation"></i> Notice: Sharing your live location will share it publicly!</p>
-                        {/* Share Location Button */}
-                        <button className="mt-5 inline-block bg-cyan-800 py-3 px-8 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
-                            Share Location
-                        </button>
-                        <br /><br />
-                        <h1 className="text-3xl font-semibold">Upcoming Meetups</h1>
-                        <p className="text-neutral-400 mt-2">No meetups found.</p>
-                        <br /><br /></>) : <>
-                        <h1 className="text-4xl font-semibold">Furnal Equinox 2024</h1>
-                        <h3 className="text-neutral-200 mt-2 text-2xl mt-5">Toronto, ON</h3>
-                        <p className="text-neutral-400 mt-2">{"Furnal Equinox (often abbreviated as FE) is one of the premier furry conventions in the world, held annually in Toronto, Ontario, Canada.  As Canada's largest furry convention, it's a vibrant hub of creativity, expression, and fun for the furry community."}</p>
-                        <div className="flex space-x-3">
-                            <div className="py-1.5 px-3 mt-5 rounded-md bg-neutral-800 border border-neutral-700">
-                                Boop Count: 0
-                            </div>
-                            <div className="py-1.5 px-3 mt-5 rounded-md bg-neutral-800 border border-neutral-700">
-                                (NFC) Meetup Count: 0
-                            </div>
-                        </div>
-                        <br /><br />
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-14">
-                            <div>
-                                <h1 className="text-3xl font-semibold">Lynix&apos;s Current Location</h1>
-                                <p className="text-neutral-400 mt-2">Current Panel: {"Unauthorized"}</p>
-                                <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-3 my-10">
-                                    <i className="fa-solid fa-warning mr-2" /> You do not have current permission to view lynix&apos;s live location, please contact Lynix.
-                                </div>
-                                {/* Map */}
-                                <Map/>
-                            </div>
-                            <div>
-                                <h1 className="text-3xl font-semibold">Request a Meetup with Lynix</h1>
-                                <p className="text-neutral-400 mt-2">Want to meet with me and potentially receive a sticker? Reserve your spot</p>
-
-                                {/* Name Field + Date Time + Location */}
-                                <div className="mt-5">
-                                    <label className="block text-neutral-400">Your Name</label>
-                                    <input type="text" className="w-full bg-neutral-800 rounded-xl p-3 text-neutral-100 mt-1 placeholder-neutral-200" placeholder="Your Name" />
-
-                                    <label className="block text-neutral-400 mt-5">Date & Time</label>
-                                    <input type="datetime-local" className="w-full bg-neutral-800 rounded-xl p-3 text-neutral-100 mt-1 " />
-
-                                    <label className="block text-neutral-400 mt-5">Location</label>
-                                    <input type="text" className="w-full bg-neutral-800 rounded-xl p-3 text-neutral-100 mt-1 placeholder-neutral-200" placeholder="Location" />
-
-                                    <button className="mt-5 inline-block bg-cyan-800 py-3 px-8 rounded-full text-neutral-100 font-semibold hover:bg-cyan-900 transition-colors">
-                                        Request Meetup
-                                    </button>
-
-                                </div>
-                            </div>
-                        </div>
-                        <br /><br />
-                    </>}
-                    <h1 className="text-3xl font-semibold">Current Panels</h1>
-                    <p className="text-neutral-400 mt-2">Jump into panels happening now!</p>
-
+            <main className="flex justify-center mt-10">
+                <div className="mb-16 flex flex-col items-start container">
+                    <div className="bg-red-900 py-2 px-5 rounded-xl font-semibold -ml-1 md:mt-0 my-10">
+                        <i className="fa-solid fa-exclamation-triangle mr-2" /> This is not an official convention application, this is just to make it easier to manage the panels during the event!
+                    </div>
+                    <h1 className="text-4xl font-semibold">Lynix Convention Manager - Furnal Equinox 2024</h1>
+                    <p className="text-neutral-400 mt-2">LCM lets you organize meetups at the conventions you are attending, and lets you keep track of your schedule.</p>
                     {/* Foreach Panel Card */}
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
                         {currentPanels.map((panel: any, index) => (
@@ -174,7 +87,7 @@ export default function Home() {
                         ))}
                     </div>
                     <br /><br />
-                    <h1 className="text-3xl font-semibold">Full Schedule</h1>
+                    <h1 className="text-3xl font-semibold mt-10">Full Schedule</h1>
                     <p className="text-neutral-400 mt-2">Explore the full schedule of panels for this weekend!</p>
                     {/* 4 Buttons Thu, Fri, Sat, Sun */}
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-5 mt-5 md:w-auto w-full">

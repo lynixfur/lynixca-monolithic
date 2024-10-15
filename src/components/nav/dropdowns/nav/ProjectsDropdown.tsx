@@ -56,22 +56,6 @@ const ProjectsDropdown = () => {
           >
             Hardware Projects
           </a>
-          <a
-            href="#about-fursona"
-            className="text-gray-950 block px-4 py-2 text-md font-semibold hover:bg-white hover:bg-opacity-30 transition-all duration-300"
-            role="menuitem"
-            tabIndex={-1}
-          >
-            VR Projects
-          </a>
-          <a
-            href="#about-fursona"
-            className="text-gray-950 block px-4 py-2 text-md font-semibold hover:bg-white hover:bg-opacity-30 transition-all duration-300"
-            role="menuitem"
-            tabIndex={-1}
-          >
-            Professional Projects
-          </a>
         </div>
       </div>
     </div>

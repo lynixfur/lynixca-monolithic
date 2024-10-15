@@ -49,20 +49,12 @@ const AboutDropdown = () => {
             My Gallery
           </a>
           <a
-            href="#about-me"
+            href="https://www.furtrack.com/user/lynixfur/fursuiting"
             className="text-gray-950 block px-4 py-2 text-md font-semibold hover:bg-white hover:bg-opacity-30 transition-all duration-300"
             role="menuitem"
             tabIndex={-1}
           >
-            Artwork of Lynix
-          </a>
-          <a
-            href="#about-me"
-            className="text-gray-950 block px-4 py-2 text-md font-semibold hover:bg-white hover:bg-opacity-30 transition-all duration-300"
-            role="menuitem"
-            tabIndex={-1}
-          >
-            Photos of Lynix
+            Furtrack
           </a>
         </div>
       </div>
