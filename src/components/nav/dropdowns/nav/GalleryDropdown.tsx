@@ -30,10 +30,9 @@ const AboutDropdown = () => {
       </div>
 
       <div
-        className={`z-20 origin-top-right absolute right-0 mt-5 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-300 ${
+        className={`bg-[#2b2a2a] z-20 origin-top-right absolute right-0 mt-5 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-300 ${
           isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
         }`}
-        style={{ background: "rgba(255, 255, 255, 0.3)", backdropFilter: "blur(20px)", boxShadow: "0 8px 30px rgba(0, 0, 0, 0.2)" }}
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="menu-button"
@@ -42,7 +41,7 @@ const AboutDropdown = () => {
         <div className="py-1" role="none">
         <a
             href="#about-fursona"
-            className="text-gray-950 block px-4 py-2 text-md font-semibold hover:bg-white hover:bg-opacity-30 transition-all duration-300"
+            className="text-gray-100 block px-4 py-2 text-md font-semibold hover:bg-neutral-900 transition-all duration-300"
             role="menuitem"
             tabIndex={-1}
           >
@@ -50,7 +49,7 @@ const AboutDropdown = () => {
           </a>
           <a
             href="https://www.furtrack.com/user/lynixfur/fursuiting"
-            className="text-gray-950 block px-4 py-2 text-md font-semibold hover:bg-white hover:bg-opacity-30 transition-all duration-300"
+            className="text-gray-100 block px-4 py-2 text-md font-semibold hover:bg-neutral-900  transition-all duration-300"
             role="menuitem"
             tabIndex={-1}
           >

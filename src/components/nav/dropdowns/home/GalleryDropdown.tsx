@@ -30,10 +30,9 @@ const AboutDropdown = () => {
       </div>
 
       <div
-        className={`origin-top-right absolute right-0 mt-5 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-300 ${
+        className={`bg-neutral-800 origin-top-right absolute right-0 mt-5 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-300 ${
           isOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
         }`}
-        style={{ background: "rgba(255, 255, 255, 0.3)", backdropFilter: "blur(20px)", boxShadow: "0 8px 30px rgba(0, 0, 0, 0.2)" }}
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="menu-button"

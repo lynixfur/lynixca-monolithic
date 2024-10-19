@@ -24,7 +24,7 @@ export default function Home() {
                         Details
                     </h1>
                     <p className="mt-3 text-lg leading-8 text-gray-300">
-                        Learn more about Lynix and it's history.
+                        Learn more about Lynix and it&apos;s history.
                     </p>
                     {/* Details */}
                     <div className="my-6">
@@ -33,7 +33,7 @@ export default function Home() {
                         Refsheet
                     </h1>
                     <p className="mt-3 text-lg leading-8 text-gray-300">
-                        Learn more about Lynix's design to help you draw him accurately.
+                        Learn more about Lynix&apos;s design to help you draw him accurately.
                     </p>
                     {/* Refsheet */}
                     <div className="my-6">

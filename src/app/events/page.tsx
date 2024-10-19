@@ -32,7 +32,8 @@ export default function Events() {
             "startDate": "2025-05-01",
             "endDate": "2025-05-04",
             "location": "Atlanta, GA",
-            "confirmed": false
+            "confirmed": false,
+            "cancelled": true
         },
         {
             "id": 4,
@@ -217,7 +218,7 @@ export default function Events() {
                             {/* Event Results */}
                             <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                                 {filteredEvents.map((event: any) => (
-                                    <div className="bg-neutral-900 rounded-2xl relative overflow-hidden flex items-stretch border border-neutral-700">
+                                    <div key={event.name} className="bg-neutral-900 rounded-2xl relative overflow-hidden flex items-stretch border border-neutral-700">
                                         <img src={event.image} alt="Event Image" className="hidden md:block w-64 object-cover" />
                                         <div className="p-5">
                                             <h2 className="text-2xl font-semibold">{event.name}</h2>
@@ -229,10 +230,16 @@ export default function Events() {
                                                     Confirmed
                                                 </p>
                                             }
-                                            {event.confirmed == false &&
+                                            {event.confirmed == false && event.cancelled != true &&
                                                 <p className="text-neutral-400 mt-2 font-semibold flex items-center space-x-4">
                                                     <i className="fa fa-circle text-xs mr-2 text-cyan-600" aria-hidden="true"></i>
                                                     Upcoming
+                                                </p>
+                                            }
+                                            {event.cancelled == true &&
+                                                <p className="text-neutral-400 mt-2 font-semibold flex items-center space-x-4">
+                                                    <i className="fa fa-circle text-xs mr-2 text-red-600" aria-hidden="true"></i>
+                                                    Cancelled
                                                 </p>
                                             }
                                         </div>
@@ -254,7 +261,7 @@ export default function Events() {
                         </div>
                         <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                             {upcomingEvents.map((event: any) => (
-                                <div className="bg-neutral-900 rounded-2xl relative overflow-hidden flex items-stretch border border-neutral-700">
+                                <div key={event.name} className="bg-neutral-900 rounded-2xl relative overflow-hidden flex items-stretch border border-neutral-700">
                                     <img src={event.image} alt="Event Image" className="hidden md:block w-64 object-cover" />
                                     <div className="p-5">
                                         <h2 className="text-2xl font-semibold">{event.name}</h2>
@@ -266,10 +273,16 @@ export default function Events() {
                                                 Confirmed
                                             </p>
                                         }
-                                        {event.confirmed == false &&
+                                        {event.confirmed == false && event.cancelled != true &&
                                             <p className="text-neutral-400 mt-2 font-semibold flex items-center space-x-4">
                                                 <i className="fa fa-circle text-xs mr-2 text-cyan-600" aria-hidden="true"></i>
                                                 Upcoming
+                                            </p>
+                                        }
+                                        {event.cancelled == true &&
+                                            <p className="text-neutral-400 mt-2 font-semibold flex items-center space-x-4">
+                                                <i className="fa fa-circle text-xs mr-2 text-red-600" aria-hidden="true"></i>
+                                                Cancelled
                                             </p>
                                         }
                                     </div>
@@ -286,7 +299,7 @@ export default function Events() {
                         </div>
                         <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                             {pastEvents.map((event: any) => (
-                                <div className="bg-neutral-900 rounded-2xl relative overflow-hidden flex items-stretch border border-neutral-700">
+                                <div key={event.name} className="bg-neutral-900 rounded-2xl relative overflow-hidden flex items-stretch border border-neutral-700">
                                     <img src={event.image} alt="Event Image" className="hidden md:block w-64 object-cover" />
                                     <div className="p-5">
                                         <h2 className="text-2xl font-semibold">{event.name}</h2>

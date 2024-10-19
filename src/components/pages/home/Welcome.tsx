@@ -39,13 +39,13 @@ export default function Welcome() {
                 </div>
             </div>
             <div id="text" className="hidden md:block w-full md:w-auto absolute md:bottom-0 md:left-0 p-10 md:mb-14 md:rounded-r-2xl" style={{ background: "rgba(0, 0, 0, 0.6)", backdropFilter: "blur(20px)", boxShadow: "0 8px 30px rgba(0, 0, 0, 0.2)" }}>
-                <h1 className="text-4xl md:text-6xl text-center md:text-left font-bold text-[#c585fc]">
+                <h1 className="text-4xl md:text-6xl text-center md:text-left font-bold text-[#8e1be1]">
                     Hey, I&apos;m Lynix!
                 </h1>
                 <p className="pt-4 text-lg text-white text-left px-1 md:px-0 hidden md:block">
                     As a Canadian developer, cybersecurity instructor, and furry enthusiast, I am passionate about leveraging<br /> IT to create positive change and make the world a better place for everyone.
                 </p>
-                <p className="text-xs italic mt-1">Picture taken by <a className="text-[#c585fc] font-bold" href="https://www.furtrack.com/user/TobeeCoyotee/fursuiting">TobeeCoyotee</a> at Nuit Blanche</p>
+                <p className="text-xs italic mt-1">Picture taken by <a className="text-[#c585fc] font-bold" href="https://www.furtrack.com/user/TobeeCoyotee/">Mepix</a> at Nuit Blanche</p>
                 <div className="hidden md:flex space-x-5 mt-5">
                     <a href="https://discord.com" aria-label="Discord">
                         <i className="fa-brands fa-discord text-4xl text-neutral-100" />
