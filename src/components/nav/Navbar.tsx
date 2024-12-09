@@ -7,6 +7,7 @@ import { useState } from 'react';
 import AboutDropdown from './dropdowns/nav/AboutDropdown';
 import GalleryDropdown from './dropdowns/nav/GalleryDropdown';
 import ProjectsDropdown from './dropdowns/nav/ProjectsDropdown';
+import SmallAlert from '../modals/SmallAlert';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Navbar() {
 
   const pathname = usePathname();
 
-  if(pathname != "/" && pathname != "/login") {
+  if(pathname != "/login") {
     return (
       <header className="py-5 px-7 md:px-24 bg-[#01336c] border-[#51a9b0] bg-opacity-0">
         <nav className="flex items-center justify-between">

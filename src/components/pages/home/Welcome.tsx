@@ -2,51 +2,17 @@ import Navbar from "@/components/nav/NavbarHome";
 
 export default function Welcome() {
     return (
-        <div className="stars-wrapper relative background-div">
-
-            <div className="rounded-md p-4 absolute top-5 left-5 mt-3 hidden"  style={{ background: "rgba(255, 255, 0, 0.21)", backdropFilter: "blur(20px)", boxShadow: "0 8px 30px rgba(0, 0, 0, 0.2)" }}>
-                <div className="flex">
-                    <div className="ml-3">
-                        <h3 className="text-lg font-bold text-yellow-800 flex items-center"><i className="fa-solid fa-triangle-exclamation mr-2"></i> Howl Network Outage</h3>
-                        <div className="mt-2 text-sm text-yellow-700">
-                            <p>
-                                With the recent system upgrade and redesign of my site, some servers or services may be temporarily offline. Thank you for your patience!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <Navbar />
-            <h1 className="Block md:hidden text-4xl text-center md:text-left font-bold text-neutral-900 md:text-neutral-100 mt-10">
-                Hey, I&apos;m Lynix!
-            </h1>
-            <div className="flex justify-center">
-                <div className="flex md:hidden space-x-5 mt-5">
-                    <a href="https://discord.com" aria-label="Discord">
-                        <i className="fa-brands fa-discord text-3xl text-neutral-950" />
-                    </a>
-                    <a href="https://t.me/lynixfur" aria-label="Telegram">
-                        <i className="fa-brands fa-telegram text-3xl text-neutral-950" />
-                    </a>
-                    <a href="https://github.com/lynixfur" aria-label="GitHub">
-                        <i className="fa-brands fa-github text-3xl text-neutral-950" />
-                    </a>
-                    <a href="https://twitter.com/lynixfur" aria-label="Twitter">
-                        <i className="fa-brands fa-twitter text-3xl text-neutral-950" />
-                    </a>
-                </div>
-            </div>
-            <div id="text" className="hidden md:block w-full md:w-auto absolute md:bottom-0 md:left-0 p-10 md:mb-14 md:rounded-r-2xl" style={{ background: "rgba(0, 0, 0, 0.6)", backdropFilter: "blur(20px)", boxShadow: "0 8px 30px rgba(0, 0, 0, 0.2)" }}>
-                <h1 className="text-4xl md:text-6xl text-center md:text-left font-bold text-[#8e1be1]">
+        <div className="stars-wrapper relative background-div flex justify-center items-center">
+            <div id="text" className="md:w-auto p-10 md:mb-14 md:rounded-2xl mt-40" style={{ background: "rgba(0, 0, 0, 0.6)", backdropFilter: "blur(20px)", boxShadow: "0 8px 30px rgba(0, 0, 0, 0.2)" }}>
+                <h1 className="text-4xl md:text-6xl text-center font-bold text-[#8e1be1]">
                     Hey, I&apos;m Lynix!
                 </h1>
-                <p className="pt-4 text-lg text-white text-left px-1 md:px-0 hidden md:block">
-                    As a Canadian developer, cybersecurity instructor, and furry enthusiast, I am passionate about leveraging<br /> IT to create positive change and make the world a better place for everyone.
+                <p className="pt-4 text-lg text-white text-center px-1 md:px-0 hidden md:block">
+                ✨ I’m a biotechnological purple wolf based in Downtown Toronto, with a fiery passion for traveling and cybersecurity. <br/> Exploring new horizons and safeguarding the digital world are what drive me every day. ✨
                 </p>
-                <p className="text-xs italic mt-1">Picture taken by <a className="text-[#c585fc] font-bold" href="https://www.furtrack.com/user/TobeeCoyotee/">Mepix</a> at Nuit Blanche</p>
-                <div className="hidden md:flex space-x-5 mt-5">
+                <p className="text-xs text-center italic mt-3">Picture taken by <a className="font-bold" href="https://www.furtrack.com/user/TobeeCoyotee/">TobeeCoyotee</a> at Nuit Blanche 2024 in Downtown Toronto</p>
+                <div className="hidden flex items-center items-center">
+                <div className="md:flex space-x-5 mt-5">
                     <a href="https://discord.com" aria-label="Discord">
                         <i className="fa-brands fa-discord text-4xl text-neutral-100" />
                     </a>
@@ -59,6 +25,7 @@ export default function Welcome() {
                     <a href="https://twitter.com/lynixfur" aria-label="Twitter">
                         <i className="fa-brands fa-twitter text-4xl text-neutral-100" />
                     </a>
+                </div>
                 </div>
             </div>
             {/*<div className="overlay absolute inset-0 flex">

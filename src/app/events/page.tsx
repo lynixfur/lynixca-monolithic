@@ -8,13 +8,22 @@ export default function Events() {
 
     const events = [
         {
-            "id": 1,
-            "name": "Canfurence 2025",
-            "image": "/events/previews/canfur-2025.png",
-            "startDate": "2025-08-01",
-            "endDate": "2025-08-04",
-            "location": "Ottawa, ON",
+            "id": 54,
+            "name": "Anthrocon 2025",
+            "image": "/AC2025.jpg",
+            "startDate": "2025-07-03",
+            "endDate": "2025-07-06",
+            "location": "Pittsburgh, PA (USA)",
             "confirmed": false
+        },
+        {
+            "id": 53,
+            "name": "Anthro New England 2025",
+            "image": "/ane2025.jpg",
+            "startDate": "2025-01-16",
+            "endDate": "2025-01-19",
+            "location": "Boston, MA (USA)",
+            "confirmed": true
         },
         {
             "id": 2,
@@ -26,12 +35,22 @@ export default function Events() {
             "confirmed": true
         },
         {
+            "id": 1,
+            "name": "Canfurence 2025",
+            "image": "/events/previews/canfur-2025.png",
+            "startDate": "2025-08-01",
+            "endDate": "2025-08-04",
+            "location": "Ottawa, ON",
+            "confirmed": false,
+            "cancelled": true
+        },
+        {
             "id": 3,
             "name": "Furry Weekend Atlanta 2025",
             "image": "/events/previews/fwa25.png",
             "startDate": "2025-05-01",
             "endDate": "2025-05-04",
-            "location": "Atlanta, GA",
+            "location": "Atlanta, GA (USA)",
             "confirmed": false,
             "cancelled": true
         },

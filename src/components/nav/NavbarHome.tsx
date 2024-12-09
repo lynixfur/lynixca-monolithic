@@ -7,7 +7,6 @@ import { useState } from 'react';
 import AboutDropdown from './dropdowns/nav/AboutDropdown';
 import GalleryDropdown from './dropdowns/nav/GalleryDropdown';
 import ProjectsDropdown from './dropdowns/nav/ProjectsDropdown';
-import SmallAlert from '../modals/SmallAlert';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,7 +79,6 @@ export default function Navbar() {
             </ul>
           </div>
         </header>
-        <SmallAlert/>
       </>
     );
   }
